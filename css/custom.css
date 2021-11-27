@@ -1,0 +1,82 @@
+.customspan{width:90px; height:30px; color:white;}
+
+#bcurrency{margin-bottom: 5px; height:50px; font-size:20px; width:255px;}
+
+#r1{margin-bottom: 5px; height:50px; font-size:20px;}
+
+#ccurrency{width:255px; height:50px; font-size:20px;}
+
+#result{border: 1px solid transparent; background:white; padding:5px; border-radius:5px; width:300px; font-size:20px; color:black;}
+#conv{width:255px; }
+#con { font-weight:bold;}
+.lwidht{ width:150px;}
+#myChart{ background-color: #cfe7ff}
+* {
+  box-sizing: border-box;
+}
+
+.rowa{
+    width: 100%;
+    
+}
+/* Create two equal columns that floats next to each other */
+.columna {
+  float: left;
+  
+  padding: 10px;
+  
+}
+
+
+.lefta {
+    width: 60%;
+}
+
+.righta {
+    width: 35%;
+}
+
+.rowa:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .columna {
+    width: 100%;
+  }
+  .columnb {
+    width: 100%;
+  }
+}
+
+.contentd{
+    padding-left:20px;
+    padding-right:10px;
+    padding-top:10px;
+    background-color: white;
+    margin-left:20px;    
+}
+
+.spacer {
+    margin: 20px;
+}
+.currbox {
+    background-color: #3dc0f1;
+    text-align: center;
+    padding: 15px;
+    color:white;
+}
+.qcbox {
+    border: 1px solid;
+}
+.newfooter{
+    padding-top:35px;
+    padding-bottom:35px;
+    
+    color: white;
+}
+.newfooter:a{text-decoration: none;}
+.highlight{  background-color: black; color:white;
+padding:10px;}
