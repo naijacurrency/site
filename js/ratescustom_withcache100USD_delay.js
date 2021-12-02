@@ -166,7 +166,8 @@ if(localStorage.getItem("all_data_100")){
 }  
 
     
-    });
+    }, 8000);
+);
 
 });
     
