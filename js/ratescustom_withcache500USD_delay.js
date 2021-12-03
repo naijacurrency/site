@@ -300,7 +300,7 @@ if(localStorage.getItem("all_data_500")){
     document.getElementById("dat").innerHTML = data[6].date;
     
     //display rate
-    document.getElementById("rat").innerHTML = format(data[6].result / 100);
+    document.getElementById("rat").innerHTML = format(data[6].info.rate);
     
   // console.log(data[6].result);
  //  console.log(data[6].date);
@@ -436,7 +436,7 @@ const myChart = new Chart(ctx, {
     document.getElementById("dat").innerHTML = data[6].date;
     
     //display rate
-    document.getElementById("rat").innerHTML = format(data[6].result / 100);
+    document.getElementById("rat").innerHTML = format(data[6].info.rate);
     
   // console.log(data[6].result);
  //  console.log(data[6].date);
