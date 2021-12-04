@@ -126,7 +126,11 @@ document.getElementsByTagName("head")[0].appendChild(tag);
 tag.src = "https://s7.addthis.com/js/300/addthis_widget.js#pubid=jetli004";
 document.getElementsByTagName("body")[0].appendChild(tag);
 
-    
+  var fimg = document.createElement("img");
+fimg.src = "https://cdn.jsdelivr.net/gh/naijacurrency/site/img/500-USD-to-Naira.jpg";
+fimg.alt = "convert 500 dollars to naira featured image";
+fimage.width = "100%";
+document.getElementById("fimage").appendChild(fimg);
     
     console.log("checking");
 
