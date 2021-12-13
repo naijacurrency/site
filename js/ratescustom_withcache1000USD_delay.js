@@ -52,7 +52,7 @@ request.onload = function() {
   var response = request.response;
  // console.log(response);
   
-  var rate = parseFloat(response.result);
+  var rate = parseFloat(response.info.rate);
  
   // console.log(rate);
 
