@@ -133,7 +133,10 @@ tag.src = "https://s7.addthis.com/js/300/addthis_widget.js#pubid=jetli004";
 document.getElementsByTagName("body")[0].appendChild(tag);
 
     
-    console.log("checking");
+    
+                           
+  $("#statsi").text("....Updated!......");
+
 
 //check if all data exists in LS
 
