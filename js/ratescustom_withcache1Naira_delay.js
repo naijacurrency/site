@@ -46,7 +46,7 @@ request.onload = function() {
   var response = request.response;
  // console.log(response);
   
-  var rate = parseFloat(response.result);
+  var rate = parseFloat(response.info.rate);
  
   // console.log(rate);
 
@@ -154,7 +154,9 @@ function monthName(mon) {
 
 document.addEventListener("DOMContentLoaded", function() {
     
-      setTimeout(function(){ console.log("After 8 seconds!"); 
+      setTimeout(function(){ //console.log("After 8 seconds!"); 
+       
+       $("#statsi").text("....Updated!......");
     
     console.log("checking");
 
@@ -194,7 +196,7 @@ if(localStorage.getItem("all_data_ntd")){
 
     loadApi();
 }  
-      }, 8000);
+      }, 6000);
     
     });
 
