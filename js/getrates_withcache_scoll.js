@@ -47,7 +47,7 @@ request.onload = function() {
   var response = request.response;
   //console.log(response);
   
-  var rate = parseFloat(response.result);
+  var rate = parseFloat(response.info.rate);
  
  //  console.log(rate);
 
@@ -68,7 +68,7 @@ var result = parseFloat(from) * rate;
 }
 
 //resultinput.innerHTML = result.toLocaleString();
-  resultinput.innerHTML = format(result / 1000);
+  resultinput.innerHTML = format(result);
 }
         
         
