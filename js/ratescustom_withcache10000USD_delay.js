@@ -7,10 +7,11 @@
  
 */
 
-  window.onload = function(){
+                window.onload = function(){
                         console.log("loaded");
                 }
         
+
 
 //calculator
 
@@ -100,17 +101,63 @@ function monthName(mon) {
 
 document.addEventListener("DOMContentLoaded", function() {
     
-      setTimeout(function(){ console.log("After 8 seconds!"); 
+     setTimeout(function(){ console.log("After 8 seconds!"); 
+    
+    
+// run the rest of the code
+    
+
+//add google adds
+//$.getScript("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2277594145415677");
+
+var tag = document.createElement("script");
+tag.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2277594145415677";
+tag.crossorigin = "anonymous";
+document.getElementsByTagName("head")[0].appendChild(tag);
+
+
+//add google analytics
+var tag = document.createElement("script");
+tag.src = "https://www.googletagmanager.com/gtag/js?id=G-XFZL8723RQ";
+document.getElementsByTagName("head")[0].appendChild(tag);
+
+var tag = document.createElement("script");
+tag.src = "js/gascript.js";
+document.getElementsByTagName("head")[0].appendChild(tag);
+
+//document.addEventListener("DOMContentLoaded", function() {
+    
+
+  var tag = document.createElement("script");
+tag.src = "https://s7.addthis.com/js/300/addthis_widget.js#pubid=jetli004";
+document.getElementsByTagName("body")[0].appendChild(tag);
+
+ var rth = document.createElement("img");
+rth.src = "https://cdn.jsdelivr.net/gh/naijacurrency/site/img/10000dollars_series1.jpg";
+rth.alt = "Series 1918 green seal 10,000 dollar bill";
+rth.width = "100%";
+document.getElementById("fimage").appendChild(rth);
+
+ var fimg = document.createElement("img");
+fimg.src = "https://cdn.jsdelivr.net/gh/naijacurrency/site/img/10000dollars_series2.jpg";
+fimg.alt = "Series 1928 green seal 10,000 dollar bill";
+fimg.width = "100%";
+document.getElementById("fimage2").appendChild(fimg);
+
+
+
     
     console.log("checking");
+    
+    $("#statsi").text("....Updated!......");
 
 //check if all data exists in LS
 
-if(localStorage.getItem("all_data_10000")){
+if(localStorage.getItem("all_data_1000")){
     
     console.log("data found");
     //get it and check for timestamp
-    var p_data = JSON.parse(localStorage.getItem("all_data_10000"));
+    var p_data = JSON.parse(localStorage.getItem("all_data_1000"));
  
 
    
@@ -141,7 +188,7 @@ if(localStorage.getItem("all_data_10000")){
     loadApi();
 }  
 
-     }, 8000);
+     }, 6000);
     });
 
 
@@ -214,17 +261,17 @@ if(localStorage.getItem("all_data_10000")){
         var m1 = monthName(m11[1]);
         
         var currency = "USD";
-        var from = 10000;
+        var from = 1000;
         var to = "NGN";
         
         
         //define urls
-        var url1 = "https://api.exchangerate.host/"+today6+"?base=USD&symbols=USD,NGN&amount=10000";
-        var url2 = "https://api.exchangerate.host/"+today5+"?base=USD&symbols=USD,NGN&amount=10000";
-        var url3 = "https://api.exchangerate.host/"+today4+"?base=USD&symbols=USD,NGN&amount=10000";
-        var url4 = "https://api.exchangerate.host/"+today3+"?base=USD&symbols=USD,NGN&amount=10000";
-        var url5 = "https://api.exchangerate.host/"+today2+"?base=USD&symbols=USD,NGN&amount=10000";
-        var url6 = "https://api.exchangerate.host/"+today1+"?base=USD&symbols=USD,NGN&amount=10000";
+        var url1 = "https://api.exchangerate.host/"+today6+"?base=USD&symbols=USD,NGN&amount=1000";
+        var url2 = "https://api.exchangerate.host/"+today5+"?base=USD&symbols=USD,NGN&amount=1000";
+        var url3 = "https://api.exchangerate.host/"+today4+"?base=USD&symbols=USD,NGN&amount=1000";
+        var url4 = "https://api.exchangerate.host/"+today3+"?base=USD&symbols=USD,NGN&amount=1000";
+        var url5 = "https://api.exchangerate.host/"+today2+"?base=USD&symbols=USD,NGN&amount=1000";
+        var url6 = "https://api.exchangerate.host/"+today1+"?base=USD&symbols=USD,NGN&amount=1000";
         var url7 = "https://api.exchangerate.host/convert?from="+currency+"&to="+to+"&amount="+from+"'";
         
         Promise.all([
@@ -237,7 +284,7 @@ if(localStorage.getItem("all_data_10000")){
            // console.log(data);
            
    //create a new array
-   var all_data_10000 = data;
+   var all_data_1000 = data;
    
    //get timestamp
 
@@ -248,10 +295,10 @@ if(localStorage.getItem("all_data_10000")){
     
     //add timestamp to data
 
-    all_data_10000.push(addtime);
+    all_data_1000.push(addtime);
    
    //save data in ls
-   localStorage.setItem("all_data_10000", JSON.stringify(all_data_10000));
+   localStorage.setItem("all_data_1000", JSON.stringify(all_data_1000));
     
     //function for formating
     /*
@@ -288,7 +335,7 @@ const myChart = new Chart(ctx, {
     data: {
         labels: [m6, m5, m4, m3, m4, m1],
         datasets: [{
-            label: '10000 dollars to Naira exchange rate in the last 6 months',
+            label: '1000 dollars to Naira exchange rate in the last 6 months',
             data: [data[0].rates.NGN, data[1].rates.NGN, data[2].rates.NGN, data[3].rates.NGN, data[4].rates.NGN, data[5].rates.NGN],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
@@ -355,7 +402,7 @@ const myChart = new Chart(ctx, {
         
         console.log("locading from LS");
         //get the data
-        data = JSON.parse(localStorage.getItem("all_data_10000"));
+        data = JSON.parse(localStorage.getItem("all_data_1000"));
         
          //define variables
         var today = new Date();
@@ -401,7 +448,7 @@ const myChart = new Chart(ctx, {
         var m1 = monthName(m11[1]);
         
         var currency = "USD";
-        var from = 10000;
+        var from = 1000;
         var to = "NGN";
          
     //display main rate
@@ -410,7 +457,7 @@ const myChart = new Chart(ctx, {
     document.getElementById("dat").innerHTML = data[6].date;
     
     //display rate
-    document.getElementById("rat").innerHTML = format(data[6].info.rate);
+    document.getElementById("rat").innerHTML = format(data[6].result / 100);
     
   // console.log(data[6].result);
  //  console.log(data[6].date);
@@ -424,7 +471,7 @@ const myChart = new Chart(ctx, {
     data: {
         labels: [m6, m5, m4, m3, m4, m1],
         datasets: [{
-            label: '10000 dollars to Naira exchange rate in the last 6 months',
+            label: '1000 dollars to Naira exchange rate in the last 6 months',
             data: [data[0].rates.NGN, data[1].rates.NGN, data[2].rates.NGN, data[3].rates.NGN, data[4].rates.NGN, data[5].rates.NGN],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
