@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+    <title><!-- Insert your title here --></title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <!-- Insert your content here -->
+<script>
+
+document.addEventListener("DOMContentLoaded", function(){
+  
+  
+  var url = "https://www.cbn.gov.ng/rates/outputExchangeRateJSN.asp?_=1642445836605";
+
+var xhr = new XMLHttpRequest();
+xhr.open("GET", url);
+
+xhr.onreadystatechange = function () {
+   if (xhr.readyState === 4) {
+      console.log(xhr.status);
+      console.log(xhr.responseText);
+   }};
+
+xhr.send();
+
+  
+  
+  
+  /*
+
+    $.get('https://www.cbn.gov.ng/rates/exchratebycurrency.asp',
+  {
+    access_key: 'YOUR_ACCESS_KEY',
+    url: 'http://scrapestack.com'
+  },
+  function(websiteContent) {
+    console.log(websiteContent);
+  }
+);
+  */
+    });
+
+</script>
+</body>
+</html>
