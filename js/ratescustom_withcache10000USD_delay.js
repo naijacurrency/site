@@ -107,13 +107,12 @@ document.addEventListener("DOMContentLoaded", function() {
 // run the rest of the code
     
 
-//add google adds
-//$.getScript("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2277594145415677");
-
-var tag = document.createElement("script");
-tag.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2277594145415677";
-tag.crossorigin = "anonymous";
-document.getElementsByTagName("head")[0].appendChild(tag);
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://https-www-naijacurrencyconverter-com-ng.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
 
 
 //add google analytics
