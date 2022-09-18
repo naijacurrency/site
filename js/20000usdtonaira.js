@@ -1,17 +1,4 @@
-/*
-site/js/ratescustom_withcache3000USD_delay.js
-@naijacurrency
-naijacurrency Add files via upload
- 1 contributor
-550 lines (374 sloc)  16.3 KB
 
- File will call api and convert currencies from calculator
- 
- File will also get historical rates
- 
- And display rate used
- 
-*/
 
 //calculator
 
