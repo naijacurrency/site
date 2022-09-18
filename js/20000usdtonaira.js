@@ -297,7 +297,7 @@ if(localStorage.getItem("all_data_20000")){
         //url for binance
 var url8 = "https://api.binance.com/api/v3/ticker/price?symbol=USDTNGN";
         //url for central bank
-var url9 = "https://www.cbn.gov.ng/rates/outputExchangeRateJSN.asp";
+var url9 ="http://api.allorigins.win/get?url=https://www.cbn.gov.ng/rates/outputExchangeRateJSN.asp";
         
         Promise.all([
             fetch(url1),fetch(url2),fetch(url3),fetch(url4),fetch(url5),fetch(url6),fetch(url7),fetch(url8),fetch(url9)
