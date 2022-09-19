@@ -455,27 +455,41 @@ const myChart = new Chart(ctx, {
         var from = 20000;
         var to = "NGN";
          
-    //display main rate
+	    
+	    
+	    
+//display sell rate 
+	var blrate = parseFloat(data[7].price);
+	console.log(blrate);
+    var sellrate = blrate - 25;
+		
+var conbdisplay = blrate * 20000;
+console.log(conbdisplay);
+    
+	document.getElementById("selldollarsrate").innerHTML = format(sellrate);
+	
+      //display main rate
      document.getElementById("con").innerHTML = format(data[6].result);
+		
+	    //display blackmarket rate
+     document.getElementById("conb").innerHTML = format(conbdisplay);
 	 
-	    //display cbn rate
+	 //display cbn rate
      document.getElementById("conc").innerHTML = format(data[6].result);
-   
- //display blackmarket rate
-     document.getElementById("conb").innerHTML = format(data[6].result);
-       
+
     //display date
     document.getElementById("dat").innerHTML = data[6].date;
-    console.log(data[6]);
+      console.log(data[6]);
     //display rate
     document.getElementById("rat").innerHTML = format(data[6].info.rate);
 	
-	  //display binance rate
-    document.getElementById("ratb").innerHTML = format(data[7].price);
+	 //display binance rate
+    document.getElementById("ratb").innerHTML = format(blrate);
     
     //display cbn rate
-    document.getElementById("ratc").innerHTML = format(data[8].info.rate);
-    
+    document.getElementById("ratc").innerHTML = format(data[8].info.rate);	    
+	    
+ 
   // console.log(data[6].result);
  //  console.log(data[6].date);
     
