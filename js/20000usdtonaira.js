@@ -86,24 +86,23 @@ function monthName(mon) {
   
 
 //new code
-/*
+
 document.addEventListener("DOMContentLoaded", function() {
     
     
-       $("#content_header").hide();
+//       $("#content_header").hide();
      
-     $("#hed").click(function(){
-        console.log("clicked");
+//     $("#hed").click(function(){
+//        console.log("clicked");
         
-          var e = document.getElementById("contentheader");
-          if ( e.style.display == 'block' )
-            e.style.display = 'none';
-        else
-            e.style.display = 'block';
+//          var e = document.getElementById("contentheader");
+//          if ( e.style.display == 'block' )
+//            e.style.display = 'none';
+//        else
+ //           e.style.display = 'block';
             
     });
- */         
-        /*
+    /*
                 if(document.getElementById("contentheader").style.display = "block"){
                         //is being displayed so we hide it
                         console.log("is being displayed so we hide it");
