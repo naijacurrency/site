@@ -260,7 +260,7 @@ if(localStorage.getItem("all_data_20000")){
 		 //url for binance
 var url8 = "https://api.binance.com/api/v3/ticker/price?symbol=USDTNGN";
         //url for central bank
-var url9 ="http://api.allorigins.win/get?url=https://www.cbn.gov.ng/rates/outputExchangeRateJSN.asp";
+var url9 ="https://api.allorigins.win/get?url=https://www.cbn.gov.ng/rates/outputExchangeRateJSN.asp";
     
         
         Promise.all([
