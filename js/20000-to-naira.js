@@ -300,14 +300,17 @@ var url9 ="https://api.allorigins.win/get?url=https://www.cbn.gov.ng/rates/outpu
         + n.toFixed(decimals).split(sep)[1];
 }
 
-    */
-	
-    //display sell rate 
-//	var blrate = "";
-//	var sellrate = blrate - 50;
 
-//	document.getElementById("selldollarsrate").innerHTML = sellrate;
-    
+    */
+		
+		    //display sell rate 
+	var blrate = data[7].price;
+	console.log(blrate);
+    var sellrate = blrate - 25;
+
+	document.getElementById("selldollarsrate").innerHTML = format(sellrate);
+	
+  
     
     //display main rate
      document.getElementById("con").innerHTML = format(data[6].result);
