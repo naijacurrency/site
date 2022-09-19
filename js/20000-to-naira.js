@@ -270,7 +270,7 @@ var url9 ="https://api.allorigins.win/get?url=https://www.cbn.gov.ng/rates/outpu
                 return response.json();
             }));
         }).then(function(data){
-           // console.log(data);
+            console.log(data);
            
    //create a new array
    var all_data_20000 = data;
