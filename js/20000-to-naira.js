@@ -289,37 +289,30 @@ var url9 ="https://api.allorigins.win/get?url=https://www.cbn.gov.ng/rates/outpu
    //save data in ls
    localStorage.setItem("all_data_20000", JSON.stringify(all_data_20000));
     
-    //function for formating
-    /*
-    function format(n, sep, decimals) {
-    sep = sep || "."; // Default to period as decimal separator
-    decimals = decimals || 2; // Default to 2 decimals
 
-    return n.toLocaleString().split(sep)[0]
-        + sep
-        + n.toFixed(decimals).split(sep)[1];
-}
-
-
-    */
-		
-		    //display sell rate 
-	var blrate = data[7].price;
+  
+//display sell rate 
+	var blrate = parseFloat(data[7].price);
 	console.log(blrate);
     var sellrate = blrate - 25;
-
+		
+var conbdisplay = blrate * 20000;
+console.log(conbdisplay);
+    
 	document.getElementById("selldollarsrate").innerHTML = format(sellrate);
 	
   
     
     //display main rate
      document.getElementById("con").innerHTML = format(data[6].result);
+		
+	   
+ //display blackmarket rate
+     document.getElementById("conb").innerHTML = format(conbdisplay);
 	 
 	 //display cbn rate
      document.getElementById("conc").innerHTML = format(data[6].result);
-   
- //display blackmarket rate
-     document.getElementById("conb").innerHTML = format(data[6].result);
+
     
     //display date
     document.getElementById("dat").innerHTML = data[6].date;
@@ -328,7 +321,7 @@ var url9 ="https://api.allorigins.win/get?url=https://www.cbn.gov.ng/rates/outpu
     document.getElementById("rat").innerHTML = format(data[6].info.rate);
 	
 	 //display binance rate
-    document.getElementById("ratb").innerHTML = format(data[7].price);
+    document.getElementById("ratb").innerHTML = format(blrate);
     
     //display cbn rate
     document.getElementById("ratc").innerHTML = format(data[8].info.rate);
