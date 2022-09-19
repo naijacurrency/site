@@ -340,6 +340,14 @@ var url9 ="http://api.allorigins.win/get?url=https://www.cbn.gov.ng/rates/output
     
     //display main rate
      document.getElementById("con").innerHTML = format(data[6].result);
+  //display cbn rate
+     document.getElementById("conc").innerHTML = format(data[6].result);
+   
+ //display blackmarket rate
+     document.getElementById("conb").innerHTML = format(data[6].result);
+    
+            
+            
     //display date
     document.getElementById("dat").innerHTML = data[6].date;
     
@@ -483,7 +491,17 @@ const myChart = new Chart(ctx, {
          
     //display main rate
      document.getElementById("con").innerHTML = format(data[6].result);
-    //display date
+    
+       //display cbn rate
+     document.getElementById("conc").innerHTML = format(data[6].result);
+   
+ //display blackmarket rate
+     document.getElementById("conb").innerHTML = format(data[6].result);
+       
+        
+        
+        
+        //display date
     document.getElementById("dat").innerHTML = data[6].date;
     
     //display rate
