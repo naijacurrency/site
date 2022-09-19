@@ -86,7 +86,7 @@ function monthName(mon) {
   
 
 //new code
-
+/*
 document.addEventListener("DOMContentLoaded", function() {
     
     
@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function() {
             e.style.display = 'block';
             
     });
-          
+ */         
         /*
                 if(document.getElementById("contentheader").style.display = "block"){
                         //is being displayed so we hide it
