@@ -204,7 +204,7 @@ if(localStorage.getItem("all_data_20000")){
     //data is not available
 
     loadApi();
-//}  
+}  
 
      }, 6000);
     });
