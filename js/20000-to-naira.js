@@ -99,7 +99,7 @@ function monthName(mon) {
 
 document.addEventListener("DOMContentLoaded", function() {
     
-     setTimeout(function(){ console.log("After 8 seconds!"); 
+     setTimeout(function(){ console.log("After 3.5 seconds!"); 
     
     
 // run the rest of the code
@@ -171,7 +171,7 @@ if(localStorage.getItem("all_data_20000")){
     loadApi();
 }  
 
-     }, 8000);
+     }, 3500);
     });
 
 
