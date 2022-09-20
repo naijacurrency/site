@@ -289,8 +289,12 @@ var url9 ="https://api.allorigins.win/get?url=https://www.cbn.gov.ng/rates/outpu
    //save data in ls
    localStorage.setItem("all_data_20000", JSON.stringify(all_data_20000));
     
-
-  
+console.log(data(8).data(1).sellingrate);
+		
+		
+  console.log(data(8).contents.data(1).sellingrate);
+		
+		
 //display sell rate 
 	var blrate = parseFloat(data[7].price);
 	console.log(blrate);
