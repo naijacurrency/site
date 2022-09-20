@@ -288,10 +288,10 @@ var url9 ="https://api.allorigins.win/get?url=https://www.cbn.gov.ng/rates/outpu
    
    //save data in ls
    localStorage.setItem("all_data_20000", JSON.stringify(all_data_20000));
-    
+    console.log("d1");
 console.log(data(8).data(1).sellingrate);
 		
-		
+	console.log("d2");	
   console.log(data(8).contents.data(1).sellingrate);
 		
 		
@@ -303,7 +303,7 @@ console.log(data(8).data(1).sellingrate);
 var conbdisplay = blrate * 20000;
 console.log(conbdisplay);
     
-	document.getElementById("selldollarsrate").innerHTML = format(sellrate);
+	document.getElementById("selldollarsrate").innerHTML = sellrate;
 	
   
     
@@ -312,7 +312,7 @@ console.log(conbdisplay);
 		
 	   
  //display blackmarket rate
-     document.getElementById("conb").innerHTML = format(conbdisplay);
+     document.getElementById("conb").innerHTML = conbdisplay;
 	 
 	 //display cbn rate
      document.getElementById("conc").innerHTML = format(data[6].result);
