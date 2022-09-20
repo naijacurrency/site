@@ -315,8 +315,8 @@ console.log(conbdisplay);
 
     
     //display date
-    document.getElementById("dat").innerHTML = data[6].date;
-      console.log(data[6]);
+   // document.getElementById("dat").innerHTML = data[6].date;
+   //   console.log(data[6]);
     //display rate
     document.getElementById("rat").innerHTML = format(data[6].info.rate);
 	
@@ -478,8 +478,8 @@ console.log(conbdisplay);
      document.getElementById("conc").innerHTML = format(data[6].result);
 
     //display date
-    document.getElementById("dat").innerHTML = data[6].date;
-      console.log(data[6]);
+  //  document.getElementById("dat").innerHTML = data[6].date;
+   //   console.log(data[6]);
     //display rate
     document.getElementById("rat").innerHTML = format(data[6].info.rate);
 	
