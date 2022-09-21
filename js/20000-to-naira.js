@@ -328,10 +328,10 @@ document.getElementById("selldollarsrate").innerHTML = sellrate;
     //display cbn rate
    document.getElementById("ratc").innerHTML = "";
     
-	console.log("d1");	
-console.log(data[8][0]);
-		console.log("d2");
-console.log(data[8][0].sellingrate);
+//console.log("d1");	
+//console.log(data[8][0]);
+//console.log("d2");
+//console.log(data[8][0].sellingrate);
 		console.log("d3");
 console.log(data[8].data[0].sellingrate);
 		console.log("d4");
