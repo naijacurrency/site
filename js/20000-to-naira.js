@@ -330,9 +330,9 @@ console.log(conbdisplay);
     
 console.log(data[8][0]);
 console.log(data[8][0].sellingrate);
-console.log(data[8].contents.[0].sellingrate)
+console.log(data[8].contents.[0].sellingrate);
 console.log(data[8].contents.sellingrate);
-  console.log(data[8].contents.data[0].sellingrate)	
+  console.log(data[8].contents.data[0].sellingrate);	
 		
 			
     
