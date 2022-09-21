@@ -294,14 +294,14 @@ var url9 ="https://api.allorigins.win/get?url=https://www.cbn.gov.ng/rates/outpu
     
 		
 //display sell rate 
-	var blrate = parseFloat(data[7].price);
-	console.log(blrate);
-    var sellrate = blrate - 25;
+var blrate = parseFloat(data[7].price);
+//console.log(blrate);
+var sellrate = blrate - 25;
 		
 var conbdisplay = blrate * 20000;
-console.log(conbdisplay);
+//console.log(conbdisplay);
     
-	document.getElementById("selldollarsrate").innerHTML = sellrate;
+document.getElementById("selldollarsrate").innerHTML = sellrate;
 	
   
     
@@ -313,7 +313,7 @@ console.log(conbdisplay);
      document.getElementById("conb").innerHTML = conbdisplay;
 	 
 	 //display cbn rate
- //    document.getElementById("conc").innerHTML = format(data[8].data[0].sellingrate);
+     document.getElementById("conc").innerHTML = "";
 
     
     //display date
@@ -326,13 +326,14 @@ console.log(conbdisplay);
     document.getElementById("ratb").innerHTML = format(blrate);
     
     //display cbn rate
-//    document.getElementById("ratc").innerHTML = format(data[8][0].sellingrate);
+   document.getElementById("ratc").innerHTML = "";
     
 console.log(data[8][0]);
 console.log(data[8][0].sellingrate);
-console.log(data[8].contents.[0].sellingrate);
+console.log(data[8].data[0].sellingrate);	
+console.log(data[8].contents[0].sellingrate);
 console.log(data[8].contents.sellingrate);
-  console.log(data[8].contents.data[0].sellingrate);	
+console.log(data[8].contents.data[0].sellingrate);	
 		
 			
     
