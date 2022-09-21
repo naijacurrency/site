@@ -320,7 +320,9 @@ document.getElementById("selldollarsrate").innerHTML = sellrate;
    // document.getElementById("dat").innerHTML = data[6].date;
    //   console.log(data[6]);
     //display rate
-    document.getElementById("rat").innerHTML = data[6].info.rate;
+var numr = data[6].info.rate;
+var rate2d = numr.toFixed(2);
+    document.getElementById("rat").innerHTML = rate2d;
 	
 	 //display binance rate
     document.getElementById("ratb").innerHTML = blrate;
