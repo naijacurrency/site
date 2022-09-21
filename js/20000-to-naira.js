@@ -298,15 +298,17 @@ var blrate = parseFloat(data[7].price);
 //console.log(blrate);
 var sellrate = blrate - 25;
 		
-var conbdisplay = blrate * 20000;
+var conbdispla = blrate * 20000;
+var conbdisplay = conbdispla.toLocaleString();
 //console.log(conbdisplay);
     
 document.getElementById("selldollarsrate").innerHTML = sellrate;
 	
-  
+ var n = data[6].result;
+ var con2d = n.toLocaleString();
     
     //display main rate
-     document.getElementById("con").innerHTML = format(data[6].result);
+     document.getElementById("con").innerHTML = con2d;
 		
 	   
  //display blackmarket rate
