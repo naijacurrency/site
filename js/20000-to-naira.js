@@ -271,12 +271,10 @@ var url9 ="https://api.allorigins.win/get?url=https://www.cbn.gov.ng/rates/outpu
             }));
         }).then(function(data){
             console.log(data[8]);
-           console.log("d1");
-console.log(data[8].data[0].sellingrate);
+      //     console.log("d1");
+//console.log(data[8].data[0].sellingrate);
 		
-	console.log("d2");	
-  console.log(data[8].contents.data[0].sellingrate);
-		
+
    //create a new array
    var all_data_20000 = data;
    
@@ -328,8 +326,14 @@ console.log(conbdisplay);
     document.getElementById("ratb").innerHTML = format(blrate);
     
     //display cbn rate
-    document.getElementById("ratc").innerHTML = format(data[8].info.rate);
+    document.getElementById("ratc").innerHTML = format(data[8][0].sellingrate);
     
+		
+		
+		console.log(data[8][0].sellingrate);
+console.log(data[8].contents.sellingrate);
+  console.log(data[8].contents.data[0].sellingrate);
+			
     
   // console.log(data[6].result);
  //  console.log(data[6].date);
