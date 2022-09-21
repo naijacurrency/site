@@ -272,10 +272,10 @@ var url9 ="https://api.allorigins.win/get?url=https://www.cbn.gov.ng/rates/outpu
         }).then(function(data){
             console.log(data[8]);
            console.log("d1");
-console.log(data[8].data[1].sellingrate);
+console.log(data[8].data[0].sellingrate);
 		
 	console.log("d2");	
-  console.log(data[8].contents.data[1].sellingrate);
+  console.log(data[8].contents.data[0].sellingrate);
 		
    //create a new array
    var all_data_20000 = data;
@@ -315,7 +315,7 @@ console.log(conbdisplay);
      document.getElementById("conb").innerHTML = conbdisplay;
 	 
 	 //display cbn rate
-     document.getElementById("conc").innerHTML = format(data[8].data[1].sellingrate);
+     document.getElementById("conc").innerHTML = format(data[8].data[0].sellingrate);
 
     
     //display date
