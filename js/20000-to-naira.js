@@ -323,20 +323,29 @@ document.getElementById("selldollarsrate").innerHTML = sellrate;
     document.getElementById("rat").innerHTML = format(data[6].info.rate);
 	
 	 //display binance rate
-    document.getElementById("ratb").innerHTML = format(blrate);
+    document.getElementById("ratb").innerHTML = blrate;
     
     //display cbn rate
    document.getElementById("ratc").innerHTML = "";
     
+	console.log("d1");	
 console.log(data[8][0]);
+		console.log("d2");
 console.log(data[8][0].sellingrate);
-console.log(data[8].data[0].sellingrate);	
+		console.log("d3");
+console.log(data[8].data[0].sellingrate);
+		console.log("d4");
 console.log(data[8].contents[0].sellingrate);
+		console.log("d5");
 console.log(data[8].contents.sellingrate);
-console.log(data[8].contents.data[0].sellingrate);	
+		console.log("d6");
+console.log(data[8].contents.data[0].sellingrate);
 		
+		console.log("d7");
+console.log(data[8].data[0]);
 			
-    
+    console.log("d8");
+console.log(data[8].contents[0]);
   // console.log(data[6].result);
  //  console.log(data[6].date);
     
