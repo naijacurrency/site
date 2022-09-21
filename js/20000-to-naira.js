@@ -337,11 +337,12 @@ document.getElementById("selldollarsrate").innerHTML = sellrate;
 //console.log("d7");
 //console.log(data[8].data[0]);
 			
- console.log("d8");
-console.log(data[8].contents[0]);
-		
-console.log("d9");
-console.log(data[8].contents.data[0].sellingrate, data[8].contents[0].sellingrate,data[8].contents.sellingrate);
+ //console.log("d8");
+//console.log(data[8].contents[0]);
+console.log(JSON.parse(data[8]));
+console.log(JSON.stringify(data[8]));
+//console.log("d9");
+//console.log(data[8].contents.data[0].sellingrate, data[8].contents[0].sellingrate,data[8].contents.sellingrate);
 console.log("d4");
 console.log(data[8].contents[0].sellingrate);
 console.log("d5");
