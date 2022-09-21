@@ -270,8 +270,13 @@ var url9 ="https://api.allorigins.win/get?url=https://www.cbn.gov.ng/rates/outpu
                 return response.json();
             }));
         }).then(function(data){
-            console.log(data);
-           
+            console.log(data[8]);
+           console.log("d1");
+console.log(data[8].data[1].sellingrate);
+		
+	console.log("d2");	
+  console.log(data[8].contents.data[1].sellingrate);
+		
    //create a new array
    var all_data_20000 = data;
    
@@ -288,12 +293,7 @@ var url9 ="https://api.allorigins.win/get?url=https://www.cbn.gov.ng/rates/outpu
    
    //save data in ls
    localStorage.setItem("all_data_20000", JSON.stringify(all_data_20000));
-    console.log("d1");
-console.log(data(8).data(1).sellingrate);
-		
-	console.log("d2");	
-  console.log(data(8).contents.data(1).sellingrate);
-		
+    
 		
 //display sell rate 
 	var blrate = parseFloat(data[7].price);
@@ -315,7 +315,7 @@ console.log(conbdisplay);
      document.getElementById("conb").innerHTML = conbdisplay;
 	 
 	 //display cbn rate
-     document.getElementById("conc").innerHTML = format(data[6].result);
+     document.getElementById("conc").innerHTML = format(data[8].data[1].sellingrate);
 
     
     //display date
