@@ -351,8 +351,8 @@ console.log("d4");
 console.log(data[8].contents[0].sellingrate);
 console.log("d5");
 console.log(data[8].contents.sellingrate);
-console.log("d6");
-console.log(data[8].contents.data[0].sellingrate);
+//console.log("d6");
+//console.log(data[8].contents.data[0].sellingrate);
 		
 		
   // console.log(data[6].result);
