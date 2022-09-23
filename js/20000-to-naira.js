@@ -332,21 +332,21 @@ var rate2d = numr.toFixed(2);
     //display cbn rate
    document.getElementById("ratc").innerHTML = "";
     
-//console.log("d1");	
-//console.log(data[8][0]);
-//console.log("d2");
-//console.log(data[8][0].sellingrate);
-//console.log("d3");
-//console.log(data[8].data[0].sellingrate);
-//console.log("d7");
-//console.log(data[8].data[0]);
+console.log("d1");	
+console.log(data[8][0]);
+console.log("d2");
+console.log(data[8][0].sellingrate);
+console.log("d3");
+console.log(data[8].data[0].sellingrate);
+console.log("d7");
+console.log(data[8].data[0]);
 			
- //console.log("d8");
-//console.log(data[8].contents[0]);
+ console.log("d8");
+console.log(data[8].contents[0]);
 //console.log(JSON.parse(data[8]));
-console.log(JSON.stringify(data[8]));
-//console.log("d9");
-//console.log(data[8].contents.data[0].sellingrate, data[8].contents[0].sellingrate,data[8].contents.sellingrate);
+//console.log(JSON.stringify(data[8]));
+console.log("d9");
+console.log(data[8].contents.data[0].sellingrate, data[8].contents[0].sellingrate,data[8].contents.sellingrate);
 console.log("d4");
 console.log(data[8].contents[0].sellingrate);
 console.log("d5");
