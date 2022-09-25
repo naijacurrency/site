@@ -371,7 +371,7 @@ var rate2d = numr.toFixed(2);
   // console.log(data[6].result);
  //  console.log(data[6].date);
     
- console.log("0:"+data[0].rates.NGN);
+// console.log("0:"+data[0].rates.NGN);
     // plot the graph here
     
     const ctx = document.getElementById('myChart').getContext('2d');
@@ -422,7 +422,7 @@ const myChart = new Chart(ctx, {
      document.getElementById("mm5").innerHTML = m2;
     document.getElementById("mm6").innerHTML = m1;
   
-    console.log("1:"+data[0].rates.NGN);
+   // console.log("1:"+data[0].rates.NGN);
 		
     document.getElementById("mr1").innerHTML = data[0].rates.NGN;
     document.getElementById("mr2").innerHTML = data[1].rates.NGN;
