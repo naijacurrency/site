@@ -270,7 +270,7 @@ var url9 ="https://api.allorigins.win/get?url=https://www.cbn.gov.ng/rates/outpu
                 return response.json();
             }));
         }).then(function(data){
-         //   console.log(data[8]);
+           console.log(data);
       //     console.log("d1");
 //console.log(data[8].data[0].sellingrate);
 		
@@ -319,13 +319,13 @@ const str = JSON.stringify(data[9]);
 const [first, ...rest] = str.split('sellingrate');
 
 //console.log(first); // ️ try
-//console.log(rest); // ['again', 'later']
+console.log(rest); // ['again', 'later']
 
 const str2 = rest;
 const [first1, ...rest1] = str.split(','); 
 
 //console.log(first1); // ️ try
-//console.log(rest1[3]); // ['again', 'later']
+console.log(rest1[3]); // ['again', 'later']
 
 var newt = rest1[3].replace("sellingrate","");
 
@@ -335,7 +335,7 @@ const str3 = newt;
 const [first2, ...rest2] = newt.split(':'); 
 
 //console.log(first2); // ️ try
-//console.log(rest2[0]); // ['again', 'later']
+console.log(rest2[0]); // ['again', 'later']
 
 
 const crate = rest2[0].slice(0, -1);
