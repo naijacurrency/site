@@ -421,7 +421,7 @@ const myChart = new Chart(ctx, {
      document.getElementById("mm5").innerHTML = m2;
     document.getElementById("mm6").innerHTML = m1;
   
-    console.log(data[0].rates.NGN);
+    console.log("1:"+data[0].rates.NGN);
 		
     document.getElementById("mr1").innerHTML = data[0].rates.NGN;
     document.getElementById("mr2").innerHTML = data[1].rates.NGN;
@@ -582,7 +582,7 @@ const myChart = new Chart(ctx, {
      document.getElementById("mm5").innerHTML = m2;
     document.getElementById("mm6").innerHTML = m1;
   
-    
+    console.log("2:"+data[0].rates.NGN);
     document.getElementById("mr1").innerHTML = data[0].rates.NGN;
     document.getElementById("mr2").innerHTML = data[1].rates.NGN;
      document.getElementById("mr3").innerHTML = data[2].rates.NGN;
