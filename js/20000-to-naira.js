@@ -313,9 +313,39 @@ document.getElementById("selldollarsrate").innerHTML = sellrate;
 	   
  //display blackmarket rate
      document.getElementById("conb").innerHTML = conbdisplay;
-	 
-	 //display cbn rate
-     document.getElementById("conc").innerHTML = "";
+	
+	// cbn dsta manipulation	
+const str = JSON.stringify(data[9]);
+const [first, ...rest] = str.split('sellingrate');
+
+//console.log(first); // ️ try
+//console.log(rest); // ['again', 'later']
+
+const str2 = rest;
+const [first1, ...rest1] = str.split(','); 
+
+//console.log(first1); // ️ try
+//console.log(rest1[3]); // ['again', 'later']
+
+var newt = rest1[3].replace("sellingrate","");
+
+//console.log("yes:"+newt);
+
+const str3 = newt;
+const [first2, ...rest2] = newt.split(':'); 
+
+//console.log(first2); // ️ try
+//console.log(rest2[0]); // ['again', 'later']
+
+
+const crate = rest2[0].slice(0, -1);
+
+console.log(crate);	
+
+var concrste = parseFloat(crate)*20000;
+	
+	 //display cbn rate conversion
+     document.getElementById("conc").innerHTML = concrate;
 
     
     //display date
@@ -325,35 +355,15 @@ document.getElementById("selldollarsrate").innerHTML = sellrate;
 var numr = data[6].info.rate;
 var rate2d = numr.toFixed(2);
     document.getElementById("rat").innerHTML = rate2d;
-	
-	 //display binance rate
-    document.getElementById("ratb").innerHTML = blrate;
-    
-    //display cbn rate
-   document.getElementById("ratc").innerHTML = "";
-    
-//console.log("d1");	
-//console.log(data[8][0]);
-//console.log("d2");
-//console.log(data[8][0].sellingrate);
-console.log("d3");
-console.log(data[8].data[0].sellingrate);
-console.log("d7");
-console.log(data[8].data[0]);
-			
- console.log("d8");
-console.log(data[8].contents[0]);
-//console.log(JSON.parse(data[8]));
-//console.log(JSON.stringify(data[8]));
-console.log("d9");
-console.log(data[8].contents.data[0].sellingrate, data[8].contents[0].sellingrate,data[8].contents.sellingrate);
-console.log("d4");
-console.log(data[8].contents[0].sellingrate);
-console.log("d5");
-console.log(data[8].contents.sellingrate);
-//console.log("d6");
-//console.log(data[8].contents.data[0].sellingrate);
+
 		
+	 //display binance rate
+    document.getElementById("ratb").innerHTML = blrate;	
+		
+    //display cbn rate
+   document.getElementById("ratc").innerHTML = crate;
+    
+
 		
   // console.log(data[6].result);
  //  console.log(data[6].date);
