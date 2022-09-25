@@ -319,33 +319,35 @@ const str = JSON.stringify(data[8]);
 const [first, ...rest] = str.split('sellingrate');
 
 //console.log(first); // ️ try
-console.log(rest); // ['again', 'later']
+//console.log(rest); // ['again', 'later']
 
 const str2 = rest;
 const [first1, ...rest1] = str.split(','); 
 
 //console.log(first1); // ️ try
-console.log(rest1[3]); // ['again', 'later']
+//console.log(rest1[3]); // ['again', 'later']
 
 var newt = rest1[3].replace("sellingrate","");
 
-console.log("yes:"+newt);
+//console.log("yes:"+newt);
 
 const str3 = newt;
 const [first2, ...rest2] = newt.split(':'); 
 
 //console.log(first2); // ️ try
-console.log(rest2[0]); // ['again', 'later']
+//console.log(rest2[0]); // ['again', 'later']
 
 
 const crate = rest2[0].slice(0, -1);
 
-console.log(crate);	
+//console.log(crate);	
 
+		
 var concrate = parseFloat(crate)*20000;
-	
+
+var con2rated = concrate.toLocaleString();
 	 //display cbn rate conversion
-     document.getElementById("conc").innerHTML = concrate;
+     document.getElementById("conc").innerHTML = con2rated;
 
     
     //display date
