@@ -342,7 +342,7 @@ const crate = rest2[0].slice(0, -1);
 
 console.log(crate);	
 
-var concrste = parseFloat(crate)*20000;
+var concrate = parseFloat(crate)*20000;
 	
 	 //display cbn rate conversion
      document.getElementById("conc").innerHTML = concrate;
