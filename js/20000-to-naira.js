@@ -210,7 +210,7 @@ if(localStorage.getItem("all_data_20000")){
         
         var m61 = today6.split("-");
         var m6 = monthName(m61[1]);
-        //console.log(m);
+        console.log(m6);
         
         
         var today = new Date();
@@ -370,7 +370,7 @@ var rate2d = numr.toFixed(2);
   // console.log(data[6].result);
  //  console.log(data[6].date);
     
-    
+ console.log(data[0].rates.NGN);
     // plot the graph here
     
     const ctx = document.getElementById('myChart').getContext('2d');
