@@ -372,9 +372,9 @@ var rate2d = numr.toFixed(2);
 var gbrate = parseFloat(data[9].price);
 var gate = gbrate+(0.07*gbrate);
 console.log(gate);
-console.log(numr);
+console.log(blrate);
 		
-var gbp2ngn = gate * numr;
+var gbp2ngn = gate * blrate;
 		
 var grate = gbp2ngn.toFixed(2);		
  document.getElementById("pou").innerHTML = grate;		
@@ -552,8 +552,10 @@ var conbdisplay = conbdispla.toLocaleString();
 	  var gbrate = parseFloat(data[9].price);
 var gate = gbrate+(0.07*gbrate);
 console.log(gate);
-
+	    console.log(blrate);
+		
 var gbp2ngn = gate * blrate;
+
 		
 var grate = gbp2ngn.toFixed(2);		
  document.getElementById("pou").innerHTML = grate;	
