@@ -262,10 +262,11 @@ if(localStorage.getItem("all_data_20000")){
 var url8 = "https://api.binance.com/api/v3/ticker/price?symbol=USDTNGN";
         //url for central bank
 var url9 ="https://api.allorigins.win/get?url=https://www.cbn.gov.ng/rates/outputExchangeRateJSN.asp";
-    
+    //url for pounds
+ var url10 ="https://api.binance.com/api/v3/ticker/price?symbol=GBPUSDT";
         
         Promise.all([
-            fetch(url1),fetch(url2),fetch(url3),fetch(url4),fetch(url5),fetch(url6),fetch(url7),fetch(url8),fetch(url9)
+            fetch(url1),fetch(url2),fetch(url3),fetch(url4),fetch(url5),fetch(url6),fetch(url7),fetch(url8),fetch(url9),fetch(url10)
         ]).then(function(responses){
             return Promise.all(responses.map(function(response){
                 return response.json();
@@ -365,8 +366,12 @@ var rate2d = numr.toFixed(2);
 		
     //display cbn rate
    document.getElementById("ratc").innerHTML = crate;
-    
-
+		
+ //display pounds rate   
+		
+var gbrate = parseFloat(data[9].price);
+var grate = gbrate.toFixed(2);		
+ document.getElementById("pou").innerHTML = grate;		
 		
   // console.log(data[6].result);
  //  console.log(data[6].date);
@@ -511,7 +516,9 @@ console.log(conbdisplay);
 	document.getElementById("selldollarsrate").innerHTML = format(sellrate);
 	
       //display main rate
-     document.getElementById("con").innerHTML = format(data[6].result);
+	var n = data[6].result;
+ var con2d = n.toLocaleString();
+     document.getElementById("con").innerHTML = con2d;
 		
 	    //display blackmarket rate
      document.getElementById("conb").innerHTML = format(conbdisplay);
@@ -525,8 +532,12 @@ console.log(conbdisplay);
     //display rate
     document.getElementById("rat").innerHTML = format(data[6].info.rate);
 	
+	  var conbdispla = blrate * 20000;
+var conbdisplay = conbdispla.toLocaleString();  
+	    
+	    
 	 //display binance rate
-    document.getElementById("ratb").innerHTML = format(blrate);
+    document.getElementById("ratb").innerHTML = conbdisplay;
     
     //display cbn rate
     document.getElementById("ratc").innerHTML = format(data[8].info.rate);	    
