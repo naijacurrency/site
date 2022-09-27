@@ -368,8 +368,9 @@ var rate2d = numr.toFixed(2);
    document.getElementById("ratc").innerHTML = crate;
 		
  //display pounds rate   
-		
+	
 var gbrate = parseFloat(data[9].price);
+console.log(gbrate);	
 var grate = gbrate.toFixed(2);		
  document.getElementById("pou").innerHTML = grate;		
 		
