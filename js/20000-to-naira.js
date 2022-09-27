@@ -272,10 +272,10 @@ var url9 ="https://api.allorigins.win/get?url=https://www.cbn.gov.ng/rates/outpu
                 return response.json();
             }));
         }).then(function(data){
-       //    console.log(data);
+          console.log(data);
       //     console.log("d1");
 //console.log(data[8].data[0].sellingrate);
-		
+		console.log(data[9]);
 
    //create a new array
    var all_data_20000 = data;
@@ -370,6 +370,7 @@ var rate2d = numr.toFixed(2);
  //display pounds rate   
 	
 var gbrate = parseFloat(data[9].price);
+var gate = gbrate+(0.07*gbrate);
 console.log(gbrate);	
 var grate = gbrate.toFixed(2);		
  document.getElementById("pou").innerHTML = grate;		
