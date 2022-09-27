@@ -372,7 +372,8 @@ var rate2d = numr.toFixed(2);
 var gbrate = parseFloat(data[9].price);
 var gate = gbrate+(0.07*gbrate);
 console.log(gate);
-
+console.log(numr);
+		
 var gbp2ngn = gate * numr;
 		
 var grate = gbp2ngn.toFixed(2);		
