@@ -13,6 +13,7 @@ var bottom_menu = '<div class="uk-container uk-container-center uk-text-center">
 
 
 document.addEventListener('DOMContentLoaded', function () {
+	console.log("newl");
 	
 	//load qcc
 	document.getElementById("qccc").innerHTML = qcc;
