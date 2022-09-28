@@ -172,7 +172,7 @@ if(localStorage.getItem("all_data_20000")){
     loadApi();
 }  
 
-     }, 3500);
+     }, 320000);
     });
 
 

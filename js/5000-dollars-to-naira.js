@@ -70,7 +70,7 @@ var result = parseFloat(from) * rate;
 }
 
 
-  resultinput.innerHTML = format(result / 20000);
+  resultinput.innerHTML = format(result / 5000);
 }
         
         
@@ -139,11 +139,11 @@ document.getElementsByTagName("body")[0].appendChild(tag);
 
 //check if all data exists in LS
 
-if(localStorage.getItem("all_data_20000")){
+if(localStorage.getItem("all_data_5000")){
     
     console.log("data found");
     //get it and check for timestamp
-    var p_data = JSON.parse(localStorage.getItem("all_data_20000"));
+    var p_data = JSON.parse(localStorage.getItem("all_data_5000"));
  
     var p_timestamp = p_data[7].timestamp;
    
@@ -153,7 +153,7 @@ if(localStorage.getItem("all_data_20000")){
     var n_timestamp = Date.now();
 
     
-    var d_timestamp = (n_timestamp - p_timestamp)/20000/60/60;
+    var d_timestamp = (n_timestamp - p_timestamp)/5000/60/60;
     
   
     
@@ -172,7 +172,7 @@ if(localStorage.getItem("all_data_20000")){
     loadApi();
 }  
 
-     }, 3500);
+     }, 35000);
     });
 
 
@@ -245,17 +245,17 @@ if(localStorage.getItem("all_data_20000")){
         var m1 = monthName(m11[1]);
         
         var currency = "USD";
-        var from = 20000;
+        var from = 5000;
         var to = "NGN";
         
         
         //define urls
-        var url1 = "https://api.exchangerate.host/"+today6+"?base=USD&symbols=USD,NGN&amount=20000";
-        var url2 = "https://api.exchangerate.host/"+today5+"?base=USD&symbols=USD,NGN&amount=20000";
-        var url3 = "https://api.exchangerate.host/"+today4+"?base=USD&symbols=USD,NGN&amount=20000";
-        var url4 = "https://api.exchangerate.host/"+today3+"?base=USD&symbols=USD,NGN&amount=20000";
-        var url5 = "https://api.exchangerate.host/"+today2+"?base=USD&symbols=USD,NGN&amount=20000";
-        var url6 = "https://api.exchangerate.host/"+today1+"?base=USD&symbols=USD,NGN&amount=20000";
+        var url1 = "https://api.exchangerate.host/"+today6+"?base=USD&symbols=USD,NGN&amount=5000";
+        var url2 = "https://api.exchangerate.host/"+today5+"?base=USD&symbols=USD,NGN&amount=5000";
+        var url3 = "https://api.exchangerate.host/"+today4+"?base=USD&symbols=USD,NGN&amount=5000";
+        var url4 = "https://api.exchangerate.host/"+today3+"?base=USD&symbols=USD,NGN&amount=5000";
+        var url5 = "https://api.exchangerate.host/"+today2+"?base=USD&symbols=USD,NGN&amount=5000";
+        var url6 = "https://api.exchangerate.host/"+today1+"?base=USD&symbols=USD,NGN&amount=5000";
         var url7 = "https://api.exchangerate.host/convert?from="+currency+"&to="+to+"&amount="+from+"'";
 		
 		 //url for binance
@@ -278,7 +278,7 @@ var url9 ="https://api.allorigins.win/get?url=https://www.cbn.gov.ng/rates/outpu
 		//console.log(data[9]);
 
    //create a new array
-   var all_data_20000 = data;
+   var all_data_5000 = data;
    
    //get timestamp
 
@@ -289,10 +289,10 @@ var url9 ="https://api.allorigins.win/get?url=https://www.cbn.gov.ng/rates/outpu
     
     //add timestamp to data
 
-    all_data_20000.push(addtime);
+    all_data_5000.push(addtime);
    
    //save data in ls
-   localStorage.setItem("all_data_20000", JSON.stringify(all_data_20000));
+   localStorage.setItem("all_data_5000", JSON.stringify(all_data_5000));
     
 		
 //display sell rate 
@@ -300,7 +300,7 @@ var blrate = parseFloat(data[7].price);
 //console.log(blrate);
 var sellrate = blrate - 25;
 		
-var conbdispla = blrate * 20000;
+var conbdispla = blrate * 5000;
 var conbdisplay = conbdispla.toLocaleString();
 //console.log(conbdisplay);
     
@@ -345,7 +345,7 @@ const crate = rest2[0].slice(0, -1);
 //console.log(crate);	
 
 		
-var concrate = parseFloat(crate)*20000;
+var concrate = parseFloat(crate)*5000;
 
 var con2rated = concrate.toLocaleString();
 	 //display cbn rate conversion
@@ -391,7 +391,7 @@ const myChart = new Chart(ctx, {
     data: {
         labels: [m6, m5, m4, m3, m4, m1],
         datasets: [{
-            label: '20000 dollars to Naira exchange rate in the last 6 months',
+            label: '5000 dollars to Naira exchange rate in the last 6 months',
             data: [data[0].rates.NGN, data[1].rates.NGN, data[2].rates.NGN, data[3].rates.NGN, data[4].rates.NGN, data[5].rates.NGN],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
@@ -459,7 +459,7 @@ const myChart = new Chart(ctx, {
         
     //    console.log("locading from LS");
         //get the data
-        data = JSON.parse(localStorage.getItem("all_data_20000"));
+        data = JSON.parse(localStorage.getItem("all_data_5000"));
         
          //define variables
         var today = new Date();
@@ -505,7 +505,7 @@ const myChart = new Chart(ctx, {
         var m1 = monthName(m11[1]);
         
         var currency = "USD";
-        var from = 20000;
+        var from = 5000;
         var to = "NGN";
          
 	    
@@ -516,7 +516,7 @@ const myChart = new Chart(ctx, {
 	console.log(blrate);
     var sellrate = blrate - 25;
 		
-var conbdisplay = blrate * 20000;
+var conbdisplay = blrate * 5000;
 console.log(conbdisplay);
     
 	document.getElementById("selldollarsrate").innerHTML = format(sellrate);
@@ -538,7 +538,7 @@ console.log(conbdisplay);
     //display rate
     document.getElementById("rat").innerHTML = format(data[6].info.rate);
 	
-	  var conbdispla = blrate * 20000;
+	  var conbdispla = blrate * 5000;
 var conbdisplay = conbdispla.toLocaleString();  
 	    
 	    
@@ -573,7 +573,7 @@ const myChart = new Chart(ctx, {
     data: {
         labels: [m6, m5, m4, m3, m4, m1],
         datasets: [{
-            label: '20000 dollars to Naira exchange rate in the last 6 months',
+            label: '5000 dollars to Naira exchange rate in the last 6 months',
             data: [data[0].rates.NGN, data[1].rates.NGN, data[2].rates.NGN, data[3].rates.NGN, data[4].rates.NGN, data[5].rates.NGN],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',

@@ -70,7 +70,7 @@ var result = parseFloat(from) * rate;
 }
 
 
-  resultinput.innerHTML = format(result / 20000);
+  resultinput.innerHTML = format(result / 200);
 }
         
         
@@ -139,11 +139,11 @@ document.getElementsByTagName("body")[0].appendChild(tag);
 
 //check if all data exists in LS
 
-if(localStorage.getItem("all_data_20000")){
+if(localStorage.getItem("all_data_1etn")){
     
     console.log("data found");
     //get it and check for timestamp
-    var p_data = JSON.parse(localStorage.getItem("all_data_20000"));
+    var p_data = JSON.parse(localStorage.getItem("all_data_1etn"));
  
     var p_timestamp = p_data[7].timestamp;
    
@@ -153,7 +153,7 @@ if(localStorage.getItem("all_data_20000")){
     var n_timestamp = Date.now();
 
     
-    var d_timestamp = (n_timestamp - p_timestamp)/20000/60/60;
+    var d_timestamp = (n_timestamp - p_timestamp)/200/60/60;
     
   
     
@@ -172,7 +172,7 @@ if(localStorage.getItem("all_data_20000")){
     loadApi();
 }  
 
-     }, 3500);
+     }, 3200);
     });
 
 
@@ -244,29 +244,31 @@ if(localStorage.getItem("all_data_20000")){
         var m11 = today1.split("-");
         var m1 = monthName(m11[1]);
         
-        var currency = "USD";
-        var from = 20000;
+        var currency = "EUR";
+        var from = 1;
         var to = "NGN";
         
         
         //define urls
-        var url1 = "https://api.exchangerate.host/"+today6+"?base=USD&symbols=USD,NGN&amount=20000";
-        var url2 = "https://api.exchangerate.host/"+today5+"?base=USD&symbols=USD,NGN&amount=20000";
-        var url3 = "https://api.exchangerate.host/"+today4+"?base=USD&symbols=USD,NGN&amount=20000";
-        var url4 = "https://api.exchangerate.host/"+today3+"?base=USD&symbols=USD,NGN&amount=20000";
-        var url5 = "https://api.exchangerate.host/"+today2+"?base=USD&symbols=USD,NGN&amount=20000";
-        var url6 = "https://api.exchangerate.host/"+today1+"?base=USD&symbols=USD,NGN&amount=20000";
+        var url1 = "https://api.exchangerate.host/"+today6+"?base=USD&symbols=EUR,NGN&amount=1";
+        var url2 = "https://api.exchangerate.host/"+today5+"?base=USD&symbols=EUR,NGN&amount=1";
+        var url3 = "https://api.exchangerate.host/"+today4+"?base=USD&symbols=EUR,NGN&amount=1";
+        var url4 = "https://api.exchangerate.host/"+today3+"?base=USD&symbols=EUR,NGN&amount=1";
+        var url5 = "https://api.exchangerate.host/"+today2+"?base=USD&symbols=EUR,NGN&amount=1";
+        var url6 = "https://api.exchangerate.host/"+today1+"?base=USD&symbols=EUR,NGN&amount=1";
         var url7 = "https://api.exchangerate.host/convert?from="+currency+"&to="+to+"&amount="+from+"'";
 		
 		 //url for binance
 var url8 = "https://api.binance.com/api/v3/ticker/price?symbol=USDTNGN";
+
+var url8a = "https://api.binance.com/api/v3/ticker/price?symbol=EURUSDT";
         //url for central bank
 var url9 ="https://api.allorigins.win/get?url=https://www.cbn.gov.ng/rates/outputExchangeRateJSN.asp";
     //url for pounds
  var url10 ="https://api.binance.com/api/v3/ticker/price?symbol=GBPUSDT";
         
         Promise.all([
-            fetch(url1),fetch(url2),fetch(url3),fetch(url4),fetch(url5),fetch(url6),fetch(url7),fetch(url8),fetch(url9),fetch(url10)
+            fetch(url1),fetch(url2),fetch(url3),fetch(url4),fetch(url5),fetch(url6),fetch(url7),fetch(url8),fetch(url9),fetch(url10),fetch(url8a)
         ]).then(function(responses){
             return Promise.all(responses.map(function(response){
                 return response.json();
@@ -278,7 +280,7 @@ var url9 ="https://api.allorigins.win/get?url=https://www.cbn.gov.ng/rates/outpu
 		//console.log(data[9]);
 
    //create a new array
-   var all_data_20000 = data;
+   var all_data_1etn = data;
    
    //get timestamp
 
@@ -289,10 +291,10 @@ var url9 ="https://api.allorigins.win/get?url=https://www.cbn.gov.ng/rates/outpu
     
     //add timestamp to data
 
-    all_data_20000.push(addtime);
+    all_data_1etn.push(addtime);
    
    //save data in ls
-   localStorage.setItem("all_data_20000", JSON.stringify(all_data_20000));
+   localStorage.setItem("all_data_1etn", JSON.stringify(all_data_1etn));
     
 		
 //display sell rate 
@@ -300,7 +302,7 @@ var blrate = parseFloat(data[7].price);
 //console.log(blrate);
 var sellrate = blrate - 25;
 		
-var conbdispla = blrate * 20000;
+var conbdispla = blrate * 1;
 var conbdisplay = conbdispla.toLocaleString();
 //console.log(conbdisplay);
     
@@ -314,38 +316,44 @@ document.getElementById("selldollarsrate").innerHTML = sellrate;
 		
 	   
  //display blackmarket rate
-     document.getElementById("conb").innerHTML = conbdisplay;
+ var blrate2 = data[10].price*data[7].price;	
+
+var fblrate= blrate2.toFixed(2);
+     document.getElementById("conb").innerHTML = fblrate;
 	
-	// cbn dsta manipulation	
+	// cbn dsta manipulation
+//console.log(data[8]);	
 const str = JSON.stringify(data[8]);
-const [first, ...rest] = str.split('sellingrate');
+const [first, ...rest] = str.split('EURO');
 
 //console.log(first); // ️ try
 //console.log(rest); // ['again', 'later']
 
 const str2 = rest;
-const [first1, ...rest1] = str.split(','); 
+const [first1, ...rest1] = str.split('}'); 
 
 //console.log(first1); // ️ try
+//console.log(rest1); // 
+//console.log(rest1[0]); 
+//console.log(rest1[1]); 
+//console.log(rest1[2]); 
 //console.log(rest1[3]); // ['again', 'later']
 
-var newt = rest1[3].replace("sellingrate","");
+const [first3, ...rest3] = rest1[1].split('EURO');
+//console.log(first3); // ️ try
+//console.log(rest3); // 
+//console.log(rest3[0]); 
+//console.log(rest3[1]); 
+//console.log(rest3[2]); 
 
-//console.log("yes:"+newt);
+const str4 = rest3;
+const [first4, ...rest4] = rest3[0].split('sellingrate'); 
 
-const str3 = newt;
-const [first2, ...rest2] = newt.split(':'); 
-
-//console.log(first2); // ️ try
-//console.log(rest2[0]); // ['again', 'later']
-
-
-const crate = rest2[0].slice(0, -1);
-
-//console.log(crate);	
-
+var numc2=rest4[0].slice(3);
+//console.log(numc2);
+	
 		
-var concrate = parseFloat(crate)*20000;
+var concrate = parseFloat(numc2)*1;
 
 var con2rated = concrate.toLocaleString();
 	 //display cbn rate conversion
@@ -362,17 +370,22 @@ var rate2d = numr.toFixed(2);
 
 		
 	 //display binance rate
-    document.getElementById("ratb").innerHTML = blrate;	
+//	console.log(data[10].price); 
+//	console.log(data[7].price); 
+//	console.log(data[10].price*data[7].price);
+	 
+    document.getElementById("ratb").innerHTML = fblrate;
+
 		
     //display cbn rate
-   document.getElementById("ratc").innerHTML = crate;
+   document.getElementById("ratc").innerHTML = numc2;
 		
  //display pounds rate   
 	
 var gbrate = parseFloat(data[9].price);
 var gate = gbrate+(0.07*gbrate);
-console.log(gate);
-console.log(blrate);
+//console.log(gate);
+//console.log(blrate);
 		
 var gbp2ngn = gate * blrate;
 		
@@ -391,7 +404,7 @@ const myChart = new Chart(ctx, {
     data: {
         labels: [m6, m5, m4, m3, m4, m1],
         datasets: [{
-            label: '20000 dollars to Naira exchange rate in the last 6 months',
+            label: '1 Euro to Naira exchange rate in the last 6 months',
             data: [data[0].rates.NGN, data[1].rates.NGN, data[2].rates.NGN, data[3].rates.NGN, data[4].rates.NGN, data[5].rates.NGN],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
@@ -459,7 +472,7 @@ const myChart = new Chart(ctx, {
         
     //    console.log("locading from LS");
         //get the data
-        data = JSON.parse(localStorage.getItem("all_data_20000"));
+        data = JSON.parse(localStorage.getItem("all_data_1etn"));
         
          //define variables
         var today = new Date();
@@ -503,20 +516,19 @@ const myChart = new Chart(ctx, {
         var today1 = previous1months.toISOString().slice(0, 10);
         var m11 = today1.split("-");
         var m1 = monthName(m11[1]);
-        
-        var currency = "USD";
-        var from = 20000;
-        var to = "NGN";
          
 	    
-	    
+	     var currency = "EUR";
+        var from = 1;
+        var to = "NGN";
+        
 	    
 //display sell rate 
 	var blrate = parseFloat(data[7].price);
 	console.log(blrate);
     var sellrate = blrate - 25;
 		
-var conbdisplay = blrate * 20000;
+var conbdisplay = blrate * 200;
 console.log(conbdisplay);
     
 	document.getElementById("selldollarsrate").innerHTML = format(sellrate);
@@ -538,7 +550,7 @@ console.log(conbdisplay);
     //display rate
     document.getElementById("rat").innerHTML = format(data[6].info.rate);
 	
-	  var conbdispla = blrate * 20000;
+	  var conbdispla = blrate * 200;
 var conbdisplay = conbdispla.toLocaleString();  
 	    
 	    
@@ -573,7 +585,7 @@ const myChart = new Chart(ctx, {
     data: {
         labels: [m6, m5, m4, m3, m4, m1],
         datasets: [{
-            label: '20000 dollars to Naira exchange rate in the last 6 months',
+            label: '200 dollars to Naira exchange rate in the last 6 months',
             data: [data[0].rates.NGN, data[1].rates.NGN, data[2].rates.NGN, data[3].rates.NGN, data[4].rates.NGN, data[5].rates.NGN],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',

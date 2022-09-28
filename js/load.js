@@ -4,7 +4,13 @@ var qcc = '<ul class="uk-grid custom-body" data-uk-grid-margin><li class="uk-wid
 
 var calcu = "";
 
+var offers = '<table style="width:90%;max-width:600px"><tr><td style="padding:10px"><span style="color:blue; font-weight:bold;">Pay USD, receive in Naira Bank account at NGN<span id="selldollarsrate"></span>/1USD</span>.<br> Payoneer, USD bank transfer, USD Cards payments accepted. <br><a href="https://wa.me/2348032367641?text=I%20am%20interested%20in%20exchanging%20Some%20dollars">Chat now to start</a></td></tr><tr><td style="padding:10px"><span style="color:blue; font-weight:bold;">Buy Pound Sterling at N<span id="pou"></span>/1GBP</span>.<br> We give unbeliveable rates. Direct deposit into UK bank account only. Minimum 100GBP, Maximum 1000 GBP. 2 days maximum bank transfer time. Escrow services available.<br><a href="https://wa.me/2348032367641?text=I%20am%20interested%20in%20buying%20Some%20pounds">Chat now to start</a></td> </tr> <tr> <td style="padding:10px"><span style="color:blue; font-weight:bold;">Open a Multicurrency Account - USD, GBP, EUR for FREE with a Debit card </span>.<br> Send money cheaper and easier than old-school banks, Use your card in more than 175 countries and withdraw money from 2.3 million ATMs. Tap or swipe anywhere — and use Google Pay and Apple Pay in supported countries. <br><a href="https://bit.ly/dollarstransfernow">Learn more</a></td> </tr></table>';
+
+
 var bmenu = '<ul class="uk-nav uk-nav-offcanvas" data-uk-nav="{ multiple: true }"><li class="uk-parent" aria-expanded="false"><a href="#">Menu</a></li><li class="uk-nav-header"><a href="index.html">Home</a></li><li class="uk-nav-header"><a href="aboutus.html">About Us</li><li class="uk-nav-header"><a href="#qc">Quick Calculators</a></li><li class="uk-nav-header"><a href="contactus.html">Contact us</li><li class="uk-nav-header"><a href="disclaimer.html">Data Disclaimer</a></li><li class="uk-nav-header"><a href="privacy-policy.html">Privacy Policy</a></li></ul>';
+
+var bottom_menu = '<div class="uk-container uk-container-center uk-text-center"><div class="uk-panel"><p class="custom-body"><a href="index.html">Home</a> | <a href="#qc">Quick Calculators </a> | <a href="aboutus.html">About Us</a> | <a href="contactus.html">Contact us </a> | <a href="disclaimer.html">Data Disclaimer</a> | <a href="privacy-policy.html">Privacy Policy </a><div class="row"><img src="img/logo.webp" alt="NaijaCurrencyConverter Logo" style="left:0; right:0; width:50px; height:50px; margim-bottom:10px; margin-top:10px;"> </div><p>2022 @ NaijaCurrenCyconverter. A WIS Online Ent. Business.</p><p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dab2bfb6b6b59ab4bbb3b0bbb9afa8a8bfb4b9a3b9b5b4acbfa8aebfa8f4b9b5b7f4b4bd">[email&#160;protected]</a> | P.O. Box 200132, Ibadan, Nigeria </p><p style="color:grey">Made by YOOtheme with love and caffeine.<br class="uk-hidden-small">Licensed under MIT license.</p></div></div>';
+
 
 document.addEventListener('DOMContentLoaded', function () {
 	
@@ -15,5 +21,9 @@ document.addEventListener('DOMContentLoaded', function () {
 	document.getElementById("tmenuu").innerHTML = tmenu;
 	//load bottom menu
 	document.getElementById("bmenuu").innerHTML = bmenu;
+	//load offers
+	document.getElementById("ofr").innerHTML = offers;
+	//load bottom menu
+	document.getElementById("nf").innerHTML = bottom_menu;
 	
 });
