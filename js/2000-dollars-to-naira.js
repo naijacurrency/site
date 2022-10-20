@@ -370,16 +370,16 @@ var rate2d = numr.toFixed(2);
  //display pounds rate   
 	
 var gbrate = parseFloat(data[9].price);
-console.log(gbrate);
+//console.log(gbrate);
 var gate = gbrate+(0.00*gbrate);
-console.log(gate);
-console.log(blrate);
+//console.log(gate);
+//console.log(blrate);
 		
 var gbp2ngn = gate * blrate;
 		
 var grate = gbp2ngn.toFixed(2);		
 
-console.log(grate);
+//console.log(grate);
  document.getElementById("pou").innerHTML = grate;		
 		
   // console.log(data[6].result);
@@ -553,7 +553,7 @@ var conbdisplay = conbdispla.toLocaleString();
 	
 	    //display gbp rate
 	  var gbrate = parseFloat(data[9].price);
-var gate = gbrate+(0.07*gbrate);
+var gate = gbrate+(0.00*gbrate);
 console.log(gate);
 	    console.log(blrate);
 		
