@@ -371,7 +371,7 @@ var rate2d = numr.toFixed(2);
 	
 var gbrate = parseFloat(data[9].price);
 		console.log(gbrate);
-var gate = gbrate+(0.07*gbrate);
+var gate = gbrate+(0.00*gbrate);
 console.log(gate);
 console.log(blrate);
 		
@@ -551,7 +551,7 @@ var conbdisplay = conbdispla.toLocaleString();
 	
 	    //display gbp rate
 	  var gbrate = parseFloat(data[9].price);
-var gate = gbrate+(0.07*gbrate);
+var gate = gbrate+(0.00*gbrate);
 console.log(gate);
 	    console.log(blrate);
 		
