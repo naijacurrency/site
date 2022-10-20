@@ -153,7 +153,7 @@ if(localStorage.getItem("all_data_200")){
     var n_timestamp = Date.now();
 
     
-    var d_timestamp = (n_timestamp - p_timestamp)/200/60/60;
+    var d_timestamp = (n_timestamp - p_timestamp)/1000/60/60;
     
   
     
