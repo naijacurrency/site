@@ -139,11 +139,11 @@ document.getElementsByTagName("body")[0].appendChild(tag);
 
 //check if all data exists in LS
 
-if(localStorage.getItem("all_data_20000")){
+if(localStorage.getItem("all_data_2000")){
     
     console.log("data found");
     //get it and check for timestamp
-    var p_data = JSON.parse(localStorage.getItem("all_data_20000"));
+    var p_data = JSON.parse(localStorage.getItem("all_data_2000"));
  
     var p_timestamp = p_data[7].timestamp;
    
@@ -172,7 +172,7 @@ if(localStorage.getItem("all_data_20000")){
     loadApi();
 }  
 
-     }, 4000);
+     }, 3200);
     });
 
 
@@ -278,7 +278,7 @@ var url9 ="https://api.allorigins.win/get?url=https://www.cbn.gov.ng/rates/outpu
 		//console.log(data[9]);
 
    //create a new array
-   var all_data_20000 = data;
+   var all_data_2000 = data;
    
    //get timestamp
 
@@ -289,10 +289,10 @@ var url9 ="https://api.allorigins.win/get?url=https://www.cbn.gov.ng/rates/outpu
     
     //add timestamp to data
 
-    all_data_20000.push(addtime);
+    all_data_2000.push(addtime);
    
    //save data in ls
-   localStorage.setItem("all_data_20000", JSON.stringify(all_data_20000));
+   localStorage.setItem("all_data_2000", JSON.stringify(all_data_2000));
     
 		
 //display sell rate 
@@ -370,13 +370,16 @@ var rate2d = numr.toFixed(2);
  //display pounds rate   
 	
 var gbrate = parseFloat(data[9].price);
-var gate = gbrate+(0.07*gbrate);
+console.log(gbrate);
+var gate = gbrate+(0.00*gbrate);
 console.log(gate);
 console.log(blrate);
 		
 var gbp2ngn = gate * blrate;
 		
 var grate = gbp2ngn.toFixed(2);		
+
+console.log(grate);
  document.getElementById("pou").innerHTML = grate;		
 		
   // console.log(data[6].result);
@@ -459,7 +462,7 @@ const myChart = new Chart(ctx, {
         
     //    console.log("locading from LS");
         //get the data
-        data = JSON.parse(localStorage.getItem("all_data_20000"));
+        data = JSON.parse(localStorage.getItem("all_data_2000"));
         
          //define variables
         var today = new Date();
