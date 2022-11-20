@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	//load bottom menu
 	document.getElementById("bmenuu").innerHTML = bmenu;
 	//load offers
-	document.getElementById("ofr").innerHTML = offers;
+	//document.getElementById("ofr").innerHTML = offers;
 	//load bottom menu
 	document.getElementById("nf").innerHTML = bottom_menu;
 	
