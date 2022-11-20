@@ -14,12 +14,12 @@ var bottom_menu = '<div class="uk-container uk-container-center uk-text-center">
 
 document.addEventListener('DOMContentLoaded', function () {
 	console.log("newl");
-	
+	//load menu
+	document.getElementById("tmenuu").innerHTML = tmenu;
 	//load qcc
 	document.getElementById("qccc").innerHTML = qcc;
 	//load calcu
-	//load menu
-	document.getElementById("tmenuu").innerHTML = tmenu;
+
 	//load bottom menu
 	document.getElementById("bmenuu").innerHTML = bmenu;
 	//load offers
