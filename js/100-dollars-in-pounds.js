@@ -60,9 +60,13 @@ var url4="https://api.exchangerate.host/"+today3+"?base=USD&symbols=USD,GBP&amou
 var url5="https://api.exchangerate.host/"+today2+"?base=USD&symbols=USD,GBP&amount=100";
 var url6="https://api.exchangerate.host/"+today1+"?base=USD&symbols=USD,GBP&amount=100";
 var url7="https://api.exchangerate.host/convert?from="+currency+"&to="+to+"&amount="+from+"'";
-var url8="https://api.binance.com/api/v3/ticker/price?symbol=USDTGBP";
+var url8="https://api.binance.com/api/v3/ticker/price?symbol=GBPUSDT";
 var url9="https://api.allorigins.win/get?url=https://www.cbn.gov.ng/rates/outputExchangeRateJSN.asp";
-var url10="https://api.binance.com/api/v3/ticker/price?symbol=GBPUSDT";Promise.all([fetch(url1),fetch(url2),fetch(url3),fetch(url4),fetch(url5),fetch(url6),fetch(url7),fetch(url8),fetch(url10)]).then(function(responses){return Promise.all(responses.map(function(response){return response.json();}));}).then(function(data){var all_data_100=data;
+var url10="https://api.binance.com/api/v3/ticker/price?symbol=GBPUSDT";
+
+Promise.all([fetch(url1),fetch(url2),fetch(url3),fetch(url4),fetch(url5),fetch(url6),fetch(url7),fetch(url8),fetch(url10)])
+.then(function(responses){return Promise.all(responses.map(function(response){return response.json();}));})
+	.then(function(data){var all_data_100=data;
 var timestamp=Date.now()
 var addtime={timestamp:timestamp};
 all_data_100.push(addtime);
@@ -116,14 +120,25 @@ const myChart=new Chart(ctx,{type:'line',data:{
 	document.getElementById("mr3").innerHTML=data[2].rates.GBP;
 	document.getElementById("mr4").innerHTML=data[3].rates.GBP;
 	document.getElementById("mr5").innerHTML=data[4].rates.GBP;
-	document.getElementById("mr6").innerHTML=data[5].rates.GBP;}).catch(function(error){console.log(error);});
+	document.getElementById("mr6").innerHTML=data[5].rates.GBP;})
+	
+	.catch(function(error){console.log(error);});
 	}
 	
 	//close
 
 function loadLS(){
 	data=JSON.parse(localStorage.getItem("all_data_100"));
-	var today=new Date();let previous6months=new Date(today.setDate(today.getDate()-180));var today6=previous6months.toISOString().slice(0,10);var m61=today6.split("-");var m6=monthName(m61[1]);var today=new Date();let previous5months=new Date(today.setDate(today.getDate()-150));var today5=previous5months.toISOString().slice(0,10);var m51=today5.split("-");var m5=monthName(m51[1]);var today=new Date();let previous4months=new Date(today.setDate(today.getDate()-120));var today4=previous4months.toISOString().slice(0,10);var m41=today4.split("-");var m4=monthName(m41[1]);var today=new Date();let previous3months=new Date(today.setDate(today.getDate()-90));var today3=previous3months.toISOString().slice(0,10);var m31=today3.split("-");var m3=monthName(m31[1]);var today=new Date();let previous2months=new Date(today.setDate(today.getDate()-60))
+	var today=new Date();let previous6months=new Date(today.setDate(today.getDate()-180));
+	var today6=previous6months.toISOString().slice(0,10);var m61=today6.split("-");
+	var m6=monthName(m61[1]);
+	var today=new Date();
+	let previous5months=new Date(today.setDate(today.getDate()-150));
+	var today5=previous5months.toISOString().slice(0,10);var m51=today5.split("-");
+	var m5=monthName(m51[1]);var today=new Date();let previous4months=new Date(today.setDate(today.getDate()-120));
+	var today4=previous4months.toISOString().slice(0,10);var m41=today4.split("-");var m4=monthName(m41[1]);
+	var today=new Date();let previous3months=new Date(today.setDate(today.getDate()-90));var today3=previous3months.toISOString().slice(0,10);
+	var m31=today3.split("-");var m3=monthName(m31[1]);var today=new Date();let previous2months=new Date(today.setDate(today.getDate()-60))
 var today2=previous2months.toISOString().slice(0,10);var m21=today2.split("-");var m2=monthName(m21[1]);var today=new Date();let previous1months=new Date(today.setDate(today.getDate()-30))
 var today1=previous1months.toISOString().slice(0,10);var m11=today1.split("-");var m1=monthName(m11[1]);
 var currency="USD";
@@ -133,7 +148,8 @@ var blrate=parseFloat(data[7].price);
 console.log(blrate);var sellrate=blrate-25;
 var conbdisplay=blrate*100;console.log(conbdisplay);
 document.getElementById("selldollarsrate").innerHTML=format(sellrate);
-var n=data[6].result;var con2d=n.toLocaleString();document.getElementById("con").innerHTML=con2d;
+var n=data[6].result;var con2d=n.toLocaleString();
+document.getElementById("con").innerHTML=con2d;
 document.getElementById("conb").innerHTML=format(conbdisplay);
 document.getElementById("conc").innerHTML=format(data[6].result);
 document.getElementById("rat").innerHTML=format(data[6].info.rate);
@@ -159,7 +175,8 @@ document.getElementById("mm6").innerHTML=m1;
 console.log("2:"+data[0].rates.GBP);
 document.getElementById("mr1").innerHTML=data[0].rates.GBP;
 document.getElementById("mr2").innerHTML=data[1].rates.GBP;
-document.getElementById("mr3").innerHTML=data[2].rates.GBP;document.getElementById("mr4").innerHTML=data[3].rates.GBP;
+document.getElementById("mr3").innerHTML=data[2].rates.GBP;
+document.getElementById("mr4").innerHTML=data[3].rates.GBP;
 
 document.getElementById("mr5").innerHTML=data[4].rates.GBP;document.getElementById("mr6").innerHTML=data[5].rates.GBP;
 }
