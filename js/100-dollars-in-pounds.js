@@ -74,7 +74,7 @@ localStorage.setItem("all_data_100",JSON.stringify(all_data_100));
 
 var blrate=parseFloat(data[7].price);
 
-var sellrate=blrate-25;
+var sellrate=blrate+710;
 var conbdispla=100/blrate;
 var conbdisplay=conbdispla.toLocaleString();
 
