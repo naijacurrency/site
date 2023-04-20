@@ -83,7 +83,7 @@ var n=data[6].result;
 var con2d=n.toLocaleString();document.getElementById("con").innerHTML=con2d;document.getElementById("conb").innerHTML=conbdisplay;
 
 const str=JSON.stringify(data[8]);
-const[first,...rest]=str.split('sellingrate');
+const[first,rest]=str.split('sellingrate');
 
 const str2=rest;
 const[first1,...rest1]=str.split(',');
