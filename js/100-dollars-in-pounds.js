@@ -64,7 +64,7 @@ var url8="https://api.binance.com/api/v3/ticker/price?symbol=GBPUSDT";
 var url9="https://api.allorigins.win/get?url=https://www.cbn.gov.ng/rates/outputExchangeRateJSN.asp";
 var url10="https://api.binance.com/api/v3/ticker/price?symbol=GBPUSDT";
 
-Promise.all([fetch(url1),fetch(url2),fetch(url3),fetch(url4),fetch(url5),fetch(url6),fetch(url7),fetch(url8),fetch(url10)])
+Promise.all([fetch(url1),fetch(url2),fetch(url3),fetch(url4),fetch(url5),fetch(url6),fetch(url7),fetch(url8),fetch(url9),fetch(url10)])
 .then(function(responses){return Promise.all(responses.map(function(response){return response.json();}));})
 	.then(function(data){var all_data_100=data;
 var timestamp=Date.now()
@@ -83,7 +83,7 @@ var n=data[6].result;
 var con2d=n.toLocaleString();document.getElementById("con").innerHTML=con2d;document.getElementById("conb").innerHTML=conbdisplay;
 
 const str=JSON.stringify(data[8]);
-const[first,rest]=str.split('sellingrate');
+const[first,...rest]=str.split('sellingrate');
 
 const str2=rest;
 const[first1,...rest1]=str.split(',');
