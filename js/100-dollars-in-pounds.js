@@ -109,7 +109,7 @@ document.getElementById("rat").innerHTML=rate2d;
 			     
 //document.getElementById("ratb").innerHTML=blrate;
 			     
-document.getElementById("ratc").innerHTML=crate;
+//document.getElementById("ratc").innerHTML=crate;
 
 var gbrate=parseFloat(data[9].price);
 
