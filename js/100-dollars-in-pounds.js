@@ -107,7 +107,7 @@ var rate2d=numr.toFixed(2);
 			     console.log(rate2d);
 document.getElementById("rat").innerHTML=rate2d;
 			     
-//document.getElementById("ratb").innerHTML=blrate;
+document.getElementById("ratb").innerHTML=blrate;
 			     
 //document.getElementById("ratc").innerHTML=crate;
 
