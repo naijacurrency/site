@@ -53,7 +53,8 @@ var today=new Date();let previous1months=new Date(today.setDate(today.getDate()-
 var today1=previous1months.toISOString().slice(0,10);
 var m11=today1.split("-");var m1=monthName(m11[1]);
 var currency="USD";var from=100;
-var to="GBP";var url1="https://api.exchangerate.host/"+today6+"?base=USD&symbols=USD,GBP&amount=100";
+var to="GBP";
+	var url1="https://api.exchangerate.host/"+today6+"?base=USD&symbols=USD,GBP&amount=100";
 var url2="https://api.exchangerate.host/"+today5+"?base=USD&symbols=USD,GBP&amount=100";
 var url3="https://api.exchangerate.host/"+today4+"?base=USD&symbols=USD,GBP&amount=100";
 var url4="https://api.exchangerate.host/"+today3+"?base=USD&symbols=USD,GBP&amount=100";
