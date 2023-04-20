@@ -99,7 +99,7 @@ var concrate=parseFloat(crate)*100;
 
 var con2rated=concrate.toLocaleString();
 
-document.getElementById("conc").innerHTML=con2rated;
+//document.getElementById("conc").innerHTML=con2rated;
 			     
 var numr=data[6].info.rate;
 			     console.log(numr);
