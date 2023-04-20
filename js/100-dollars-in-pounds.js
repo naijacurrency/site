@@ -74,27 +74,41 @@ localStorage.setItem("all_data_100",JSON.stringify(all_data_100));
 
 var blrate=parseFloat(data[7].price);
 
-var sellrate=blrate-25;var conbdispla=blrate*100;
+var sellrate=blrate-25;
+var conbdispla=100/blrate;
 var conbdisplay=conbdispla.toLocaleString();
 
 document.getElementById("selldollarsrate").innerHTML=sellrate;
 var n=data[6].result;
 var con2d=n.toLocaleString();document.getElementById("con").innerHTML=con2d;document.getElementById("conb").innerHTML=conbdisplay;
 
-const str=JSON.stringify(data[8]);const[first,...rest]=str.split('sellingrate');
+const str=JSON.stringify(data[8]);
+const[first,...rest]=str.split('sellingrate');
 
-const str2=rest;const[first1,...rest1]=str.split(',');var newt=rest1[3].replace("sellingrate","");
+const str2=rest;
+const[first1,...rest1]=str.split(',');
+var newt=rest1[3].replace("sellingrate","");
 
-const str3=newt;const[first2,...rest2]=newt.split(':');
-
-const crate=rest2[0].slice(0,-1);var concrate=parseFloat(crate)*100;
+const str3=newt;
+const[first2,...rest2]=newt.split(':');
+console.log(rest2);
+const crate=rest2[0].slice(0,-1);
+console.log(rest2[0]);			     
+var concrate=parseFloat(crate)*100;
 
 var con2rated=concrate.toLocaleString();
 
 document.getElementById("conc").innerHTML=con2rated;
+			     
 var numr=data[6].info.rate;
-var rate2d=numr.toFixed(2);document.getElementById("rat").innerHTML=rate2d;
-document.getElementById("ratb").innerHTML=blrate;document.getElementById("ratc").innerHTML=crate;
+			     console.log(numr);
+var rate2d=numr.toFixed(2);
+			     console.log(rate2d);
+document.getElementById("rat").innerHTML=rate2d;
+			     
+//document.getElementById("ratb").innerHTML=blrate;
+			     
+document.getElementById("ratc").innerHTML=crate;
 
 var gbrate=parseFloat(data[9].price);
 
@@ -146,7 +160,7 @@ var from=100;
 var to="GBP";
 var blrate=parseFloat(data[7].price);
 console.log(blrate);var sellrate=blrate-25;
-var conbdisplay=blrate*100;console.log(conbdisplay);
+var conbdisplay=100 / blrate;console.log(conbdisplay);
 document.getElementById("selldollarsrate").innerHTML=format(sellrate);
 var n=data[6].result;var con2d=n.toLocaleString();
 document.getElementById("con").innerHTML=con2d;
@@ -155,7 +169,7 @@ document.getElementById("conc").innerHTML=format(data[6].result);
 document.getElementById("rat").innerHTML=format(data[6].info.rate);
 var conbdispla=blrate*100;
 var conbdisplay=conbdispla.toLocaleString();
-document.getElementById("ratb").innerHTML=conbdisplay;
+//document.getElementById("ratb").innerHTML=conbdisplay;
 document.getElementById("ratc").innerHTML=format(data[8].info.rate);
 var gbrate=parseFloat(data[9].price);
 var gate=gbrate+(0.0*gbrate);console.log(gate);
