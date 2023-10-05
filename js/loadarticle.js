@@ -1,6 +1,6 @@
 var tmenu = '<a class="uk-navbar-brand" href="/index.html"><span class="customspan">NaijaCurrencyConverter</span></a><div class="uk-container uk-container-center"><ul class="uk-navbar-nav uk-hidden-small"><li><a href="../index.html">Welcome</a></li><li><a href="../aboutus.html">About Us</a></li><li><a href="../#qc">Quick Calculators</a></li><li><a href="../contactus.html">Contact us</a></li></ul><a href="../#tm-offcanvas" class="uk-visible-small" data-uk-offcanvas=""><span><i class="fas fa-bars fa-lg" style="margin-top:12px"></i></span></a></div>';
 
-var qcc = '<ul class="uk-grid custom-body" data-uk-grid-margin><li class="uk-width lwidht"><a href="../convert-naira-to-dollar.html">Convert naira to dollar</a></li><li class="uk-width lwidht"><a href="../20000-dollars-to-naira.html">20000 dollars to naira</a></li><li class="uk-width lwidht"><a href="../200000-dollars-to-naira.html">200000 dollars to naira</a></li><li class="uk-width lwidht"><a href="../convert-500-dollars-to-naira.html">Convert 500 dollars to naira</a></li><li class="uk-width lwidht"><a href="../50-dollars-to-naira.html">50 dollars to naira</a></li><li class="uk-width lwidht"><a href="../5000-dollars-to-naira.html">5000 dollars to naira</a></li><li class="uk-width lwidht"><a href="../convert-2000-dollars-to-naira.html">Convert 2000 dollars to naira</a></li><li class="uk-width lwidht"><a href="../3000-dollars-to-naira.html">3000 dollars to naira</a></li><li class="uk-width lwidht"><a href="../canadian-dollar-to-naira.html">canadian dollar to naira</a></li><li class="uk-width lwidht"><a href="../convert-200-dollars-to-naira.html">Convert 200 dollars to naira</a></li><li class="uk-width lwidht"><a href="../1-euro-to-naira.html">1 euro to naira</a></li><li class="uk-width lwidht"><a href="../2000000-dollars-to-naira.html">2000000 dollars to naira</a></li><li class="uk-width lwidht"><a href="../convert-btc-to-usd.html">Convert btc to usd</a></li><li class="uk-width lwidht"><a href="../200000-naira-to-USD.html">200000 naira to USD</a></li></ul>';
+var qcc = '<ul class="uk-grid custom-body" data-uk-grid-margin><li class="uk-width lwidht"><a href="convert-naira-to-dollar.html">Convert naira to dollar</a></li><li class="uk-width lwidht"><a href="20000-dollars-to-naira.html">20000 dollars to naira</a></li><li class="uk-width lwidht"><a href="100-dollars-in-pounds.html">100 dollars in pounds</a></li><li class="uk-width lwidht"><a href="200000-dollars-to-naira.html">200000 dollars to naira</a></li><li class="uk-width lwidht"><a href="convert-500-dollars-to-naira.html">Convert 500 dollars to naira</a></li><li class="uk-width lwidht"><a href="50-dollars-to-naira.html">50 dollars to naira</a></li><li class="uk-width lwidht"><a href="5000-dollars-to-naira.html">5000 dollars to naira</a></li><li class="uk-width lwidht"><a href="convert-2000-dollars-to-naira.html">Convert 2000 dollars to naira</a></li><li class="uk-width lwidht"><a href="3000-dollars-to-naira.html">3000 dollars to naira</a></li><li class="uk-width lwidht"><a href="canadian-dollar-to-naira.html">canadian dollar to naira</a></li><li class="uk-width lwidht"><a href="convert-200-dollars-to-naira.html">Convert 200 dollars to naira</a></li><li class="uk-width lwidht"><a href="1-euro-to-naira.html">1 euro to naira</a></li><li class="uk-width lwidht"><a href="2000000-dollars-to-naira.html">2000000 dollars to naira</a></li><li class="uk-width lwidht"><a href="convert-btc-to-usd.html">Convert btc to usd</a></li><li class="uk-width lwidht"><a href="200000-naira-to-USD.html">200000 naira to USD</a></li><li class="uk-width lwidht"><a href="1000-dollars-to-naira.html">1000 dollars to naira</a></li></ul>';
 
 var calcu = "";
 
@@ -27,3 +27,78 @@ document.addEventListener('DOMContentLoaded', function () {
 	document.getElementById("nf").innerHTML = bottom_menu;
 	
 });
+
+
+//calculator
+
+document.getElementById("conv").addEventListener("click",function(){
+    
+	//  console.log("running");
+	  
+	  //check if value to be converted is 0
+	  if(!document.getElementById("r1").value == 0
+		 && document.getElementById("ccurrency")
+		 && document.getElementById("bcurrency") ){
+  
+  //define cosntants
+  var basecurrency = document.getElementById("bcurrency");
+  var covertcurrency = document.getElementById("ccurrency");
+  var firstinput = document.getElementById("r1");
+  var resultinput = document.getElementById("result");
+  
+  
+  //get inputs
+  
+  var currency = basecurrency.value;
+  var from = firstinput.value;
+  var to = covertcurrency.value;
+  
+  //call api to get current rate
+  
+  
+  var requestURL = 'https://v6.exchangerate-api.com/v6/a779c2ab746dc1471f4cf977/pair/'+currency+'/'+to;
+  
+  //var requestURL = 'https://api.exchangerate.host/convert?from='+currency+'&to='+to+'&amount='+from+'';
+  var request = new XMLHttpRequest();
+  request.open('GET', requestURL);
+  request.responseType = 'json';
+  request.send();
+  
+  request.onload = function() {
+	var response = request.response;
+   //console.log(response);
+	
+	var rate = parseFloat(response.conversion_rate);
+   
+   //  console.log(rate);
+	 //console.log(from);
+  
+  //calculate rate
+  var result = parseFloat(from) * rate;
+  
+  
+  
+  //function for formating
+	  function format(n, sep, decimals) {
+	  sep = sep || "."; // Default to period as decimal separator
+	  decimals = decimals || 2; // Default to 2 decimals
+  
+	  return n.toLocaleString().split(sep)[0]
+		  + sep
+		  + n.toFixed(decimals).split(sep)[1];
+  }
+  
+  
+	resultinput.innerHTML = format(result);
+  }
+		  
+		  
+	  } else {
+		 // alert("enter a value");
+	  
+		  document.getElementById("notification").innerHTML = "please complete all information required";
+	  }
+  
+  });
+  
+  
