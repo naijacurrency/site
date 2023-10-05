@@ -11,6 +11,7 @@
 
 
 //calculator
+//calculator
 
 document.getElementById("conv").addEventListener("click",function(){
     
@@ -37,7 +38,9 @@ var to = covertcurrency.value;
 //call api to get current rate
 
 
-var requestURL = 'https://api.exchangerate.host/convert?from='+currency+'&to='+to+'&amount='+from+'';
+var requestURL = 'https://v6.exchangerate-api.com/v6/a779c2ab746dc1471f4cf977/pair/'+currency+'/'+to;
+
+//var requestURL = 'https://api.exchangerate.host/convert?from='+currency+'&to='+to+'&amount='+from+'';
 var request = new XMLHttpRequest();
 request.open('GET', requestURL);
 request.responseType = 'json';
@@ -45,20 +48,20 @@ request.send();
 
 request.onload = function() {
   var response = request.response;
-  //console.log(response);
+ //console.log(response);
   
-  var rate = parseFloat(response.info.rate);
+  var rate = parseFloat(response.conversion_rate);
  
  //  console.log(rate);
+   //console.log(from);
 
 //calculate rate
 var result = parseFloat(from) * rate;
-//console.log(result);
 
-//display final value
-//console.log(result);
 
- function format(n, sep, decimals) {
+
+//function for formating
+    function format(n, sep, decimals) {
     sep = sep || "."; // Default to period as decimal separator
     decimals = decimals || 2; // Default to 2 decimals
 
@@ -67,7 +70,7 @@ var result = parseFloat(from) * rate;
         + n.toFixed(decimals).split(sep)[1];
 }
 
-//resultinput.innerHTML = result.toLocaleString();
+
   resultinput.innerHTML = format(result);
 }
         
@@ -75,10 +78,11 @@ var result = parseFloat(from) * rate;
     } else {
        // alert("enter a value");
     
-        document.getElementById("notification").innerHTML = "please completed all information required";
+        document.getElementById("notification").innerHTML = "please complete all information required";
     }
 
 });
+
 
 
 
@@ -98,7 +102,7 @@ if(localStorage.getItem("scrollc")){
 //on load
 document.addEventListener("DOMContentLoaded", function() {
     
- setTimeout(function(){ console.log("After 8 seconds!"); 
+ setTimeout(function(){// console.log("After 8 seconds!"); 
     
     
 // run the rest of the code
@@ -106,12 +110,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
 //add google adds
 //$.getScript("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2277594145415677");
-
+/*
 var tag = document.createElement("script");
 tag.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2277594145415677";
 tag.crossorigin = "anonymous";
 document.getElementsByTagName("head")[0].appendChild(tag);
-
+*/
 
 //add google analytics
 var tag = document.createElement("script");
@@ -169,7 +173,7 @@ if(localStorage.getItem("all_rates")){
  //   console.log("no data found");
     loadApi();
 }  
-}, 8000);  
+}, 3500);  
 //}
     });
 
@@ -179,9 +183,10 @@ function loadApi(){
     
     
    
-   console.log("loading api");
+  // console.log("loading api");
     
-        var requestURL = 'https://api.exchangerate.host/latest?base=USD';
+    //    var requestURL = 'https://api.exchangerate.host/latest?base=USD';
+        var requestURL = 'https://openexchangerates.org/api/latest.json?app_id=2811fd1ec0024160ab4d4f63316e1730';
 var request = new XMLHttpRequest();
 request.open('GET', requestURL);
 request.responseType = 'json';
@@ -216,7 +221,8 @@ request.onload = function() {
  // console.log(response);
   
   var date = request.response.date;
-  
+ // console.log(date);
+
   var USDrate = response.rates.USD;
   var NGNrate = response.rates.NGN;
    var EUROrate = response.rates.EUR;
@@ -290,7 +296,7 @@ request.onload = function() {
 
 function loadLS(){
     
-    console.log("locading from LS");
+    //console.log("locading from LS");
         //get the data
      var data = JSON.parse(localStorage.getItem("all_rates"));
      
