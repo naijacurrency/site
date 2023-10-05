@@ -38,9 +38,9 @@ var to = covertcurrency.value;
 //call api to get current rate
 
 
+var requestURL = 'https://v6.exchangerate-api.com/v6/a779c2ab746dc1471f4cf977/pair/'+currency+'/'+to;
 
-
-var requestURL = 'https://api.exchangerate.host/convert?from='+currency+'&to='+to+'&amount='+from+'';
+//var requestURL = 'https://api.exchangerate.host/convert?from='+currency+'&to='+to+'&amount='+from+'';
 var request = new XMLHttpRequest();
 request.open('GET', requestURL);
 request.responseType = 'json';
@@ -48,11 +48,12 @@ request.send();
 
 request.onload = function() {
   var response = request.response;
- // console.log(response);
+ //console.log(response);
   
-  var rate = parseFloat(response.info.rate);
+  var rate = parseFloat(response.conversion_rate);
  
-  // console.log(rate);
+ //  console.log(rate);
+   //console.log(from);
 
 //calculate rate
 var result = parseFloat(from) * rate;
@@ -70,7 +71,7 @@ var result = parseFloat(from) * rate;
 }
 
 
-  resultinput.innerHTML = format(result / amount_to_change);
+  resultinput.innerHTML = format(result);
 }
         
         
@@ -281,7 +282,7 @@ var url9 ="https://api.allorigins.win/get?url=https://www.cbn.gov.ng/rates/outpu
                 return response.json();
             }));
         }).then(function(data){
-          console.log(data);
+   //       console.log(data);
       //     console.log("d1");
 //console.log(data[8].data[0].sellingrate);
 		//console.log(data[9]);
@@ -314,9 +315,9 @@ var conbdisplay = conbdispla.toLocaleString();
 //console.log(conbdisplay);
     
 document.getElementById("selldollarsrate").innerHTML = sellrate;
-console.log(data[6].rates.NGN);
+//console.log(data[6].rates.NGN);
  var n = data[6].rates.NGN*amount_to_change;
- console.log(n);
+// console.log(n);
  var con2d = n.toLocaleString();
     
     //display main rate
@@ -404,8 +405,8 @@ var grate = gbp2ngn.toFixed(2);
     data: {
         labels: [m6, m5, m4, m3, m4, m1],
         datasets: [{
-            label: 'amount_to_change dollars to Naira exchange rate in the last 6 months',
-        //    data: [data[0].rates.NGN*amount_to_convert, data[1].rates.NGN*amount_to_convert, data[2].rates.NGN*amount_to_convert, data[3].rates.NGN*amount_to_convert, data[4].rates.NGN*amount_to_convert, data[5].rates.NGN*amount_to_convert],
+            label: '500 dollars to Naira exchange rate in the last 6 months',
+            data: [data[0].rates.NGN*amount_to_change, data[1].rates.NGN*amount_to_change, data[2].rates.NGN*amount_to_change, data[3].rates.NGN*amount_to_change, data[4].rates.NGN*amount_to_change, data[5].rates.NGN*amount_to_change],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -454,6 +455,7 @@ var grate = gbp2ngn.toFixed(2);
    document.getElementById("mr4").innerHTML = data[3].rates.NGN*amount_to_change;
   document.getElementById("mr5").innerHTML = data[4].rates.NGN*amount_to_change;
    document.getElementById("mr6").innerHTML = data[5].rates.NGN*amount_to_change;
+  
     
     
     }).catch(function(error){
