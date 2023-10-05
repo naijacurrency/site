@@ -8,79 +8,79 @@
 */
 
             
-        
-
+   
 
 //calculator
 
 document.getElementById("conv").addEventListener("click",function(){
     
-  //  console.log("running");
-    
-    //check if value to be converted is 0
-    if(!document.getElementById("r1").value == 0
-       && document.getElementById("ccurrency")
-       && document.getElementById("bcurrency") ){
-
-//define cosntants
-var basecurrency = document.getElementById("bcurrency");
-var covertcurrency = document.getElementById("ccurrency");
-var firstinput = document.getElementById("r1");
-var resultinput = document.getElementById("result");
-
-
-//get inputs
-
-var currency = basecurrency.value;
-var from = firstinput.value;
-var to = covertcurrency.value;
-
-//call api to get current rate
-
-
-
-
-var requestURL = 'https://api.exchangerate.host/convert?from='+currency+'&to='+to+'&amount='+from+'';
-var request = new XMLHttpRequest();
-request.open('GET', requestURL);
-request.responseType = 'json';
-request.send();
-
-request.onload = function() {
-  var response = request.response;
- // console.log(response);
+    //  console.log("running");
+      
+      //check if value to be converted is 0
+      if(!document.getElementById("r1").value == 0
+         && document.getElementById("ccurrency")
+         && document.getElementById("bcurrency") ){
   
-  var rate = parseFloat(response.info.rate);
- 
-  // console.log(rate);
-
-//calculate rate
-var result = parseFloat(from) * rate;
-
-
-
-//function for formating
-    function format(n, sep, decimals) {
-    sep = sep || "."; // Default to period as decimal separator
-    decimals = decimals || 2; // Default to 2 decimals
-
-    return n.toLocaleString().split(sep)[0]
-        + sep
-        + n.toFixed(decimals).split(sep)[1];
-}
-
-
-  resultinput.innerHTML = format(result / 200);
-}
-        
-        
-    } else {
-       // alert("enter a value");
+  //define cosntants
+  var basecurrency = document.getElementById("bcurrency");
+  var covertcurrency = document.getElementById("ccurrency");
+  var firstinput = document.getElementById("r1");
+  var resultinput = document.getElementById("result");
+  
+  
+  //get inputs
+  
+  var currency = basecurrency.value;
+  var from = firstinput.value;
+  var to = covertcurrency.value;
+  
+  //call api to get current rate
+  
+  
+  var requestURL = 'https://v6.exchangerate-api.com/v6/a779c2ab746dc1471f4cf977/pair/'+currency+'/'+to;
+  
+  //var requestURL = 'https://api.exchangerate.host/convert?from='+currency+'&to='+to+'&amount='+from+'';
+  var request = new XMLHttpRequest();
+  request.open('GET', requestURL);
+  request.responseType = 'json';
+  request.send();
+  
+  request.onload = function() {
+    var response = request.response;
+   //console.log(response);
     
-        document.getElementById("notification").innerHTML = "please complete all information required";
-    }
-
-});
+    var rate = parseFloat(response.conversion_rate);
+   
+   //  console.log(rate);
+     //console.log(from);
+  
+  //calculate rate
+  var result = parseFloat(from) * rate;
+  
+  
+  
+  //function for formating
+      function format(n, sep, decimals) {
+      sep = sep || "."; // Default to period as decimal separator
+      decimals = decimals || 2; // Default to 2 decimals
+  
+      return n.toLocaleString().split(sep)[0]
+          + sep
+          + n.toFixed(decimals).split(sep)[1];
+  }
+  
+  
+    resultinput.innerHTML = format(result);
+  }
+          
+          
+      } else {
+         // alert("enter a value");
+      
+          document.getElementById("notification").innerHTML = "please complete all information required";
+      }
+  
+  });
 
 
 //get rate for specific page
@@ -250,13 +250,19 @@ if(localStorage.getItem("all_data_1etn")){
         
         
         //define urls
-        var url1 = "https://api.exchangerate.host/"+today6+"?base=USD&symbols=EUR,NGN&amount=1";
-        var url2 = "https://api.exchangerate.host/"+today5+"?base=USD&symbols=EUR,NGN&amount=1";
-        var url3 = "https://api.exchangerate.host/"+today4+"?base=USD&symbols=EUR,NGN&amount=1";
-        var url4 = "https://api.exchangerate.host/"+today3+"?base=USD&symbols=EUR,NGN&amount=1";
-        var url5 = "https://api.exchangerate.host/"+today2+"?base=USD&symbols=EUR,NGN&amount=1";
-        var url6 = "https://api.exchangerate.host/"+today1+"?base=USD&symbols=EUR,NGN&amount=1";
-        var url7 = "https://api.exchangerate.host/convert?from="+currency+"&to="+to+"&amount="+from+"'";
+
+            //define urls
+        var app_id = "2811fd1ec0024160ab4d4f63316e1730";
+
+        var url1="https://openexchangerates.org/api/historical/"+today6+".json?app_id="+app_id+"&symbols=NGN,EUR";
+        var url2="https://openexchangerates.org/api/historical/"+today5+".json?app_id="+app_id+"&symbols=NGN,EUR";
+        var url3="https://openexchangerates.org/api/historical/"+today4+".json?app_id="+app_id+"&symbols=NGN,EUR";
+        var url4="https://openexchangerates.org/api/historical/"+today3+".json?app_id="+app_id+"&symbols=NGN,EUR";
+        var url5="https://openexchangerates.org/api/historical/"+today2+".json?app_id="+app_id+"&symbols=NGN,EUR";
+        var url6="https://openexchangerates.org/api/historical/"+today1+".json?app_id="+app_id+"&symbols=NGN,EUR";
+        var url7="https://openexchangerates.org/api/latest.json?app_id="+app_id+"&symbols="+to+","+currency;
+
+
 		
 		 //url for binance
 var url8 = "https://api.binance.com/api/v3/ticker/price?symbol=USDTNGN";
@@ -308,8 +314,17 @@ var conbdisplay = conbdispla.toLocaleString();
     
 document.getElementById("selldollarsrate").innerHTML = sellrate;
 	
- var n = data[6].result;
- var con2d = n.toLocaleString();
+ 
+ 
+
+ var numt =  data[6].rates.NGN;
+var numy = data[6].rates.EUR;
+var n = numt / numy;
+
+var con2d = n.toLocaleString();
+
+//var rate2d = fnumr.toFixed(2);
+    document.getElementById("rat").innerHTML = rate2d;
     
     //display main rate
      document.getElementById("con").innerHTML = con2d;
@@ -364,8 +379,12 @@ var con2rated = concrate.toLocaleString();
    // document.getElementById("dat").innerHTML = data[6].date;
    //   console.log(data[6]);
     //display rate
-var numr = data[6].info.rate;
-var rate2d = numr.toFixed(2);
+var numrd =  data[6].rates.NGN;
+var numr = data[6].rates.EUR;
+var fnumr = numrd / numr;
+
+var rate2d = fnumr.toFixed(2);
+
     document.getElementById("rat").innerHTML = rate2d;
 
 		
@@ -390,6 +409,7 @@ var gate = gbrate+(0.00*gbrate);
 var gbp2ngn = gate * blrate;
 		
 var grate = gbp2ngn.toFixed(2);		
+
  document.getElementById("pou").innerHTML = grate;		
 		
   // console.log(data[6].result);
@@ -405,7 +425,7 @@ const myChart = new Chart(ctx, {
         labels: [m6, m5, m4, m3, m4, m1],
         datasets: [{
             label: '1 Euro to Naira exchange rate in the last 6 months',
-            data: [data[0].rates.NGN, data[1].rates.NGN, data[2].rates.NGN, data[3].rates.NGN, data[4].rates.NGN, data[5].rates.NGN],
+            data: [data[0].rates.NGN/data[0].rates.EUR, data[1].rates.NGN/data[1].rates.EUR, data[2].rates.NGN/data[2].rates.EUR, data[3].rates.NGN/data[3].rates.EUR, data[4].rates.NGN/data[4].rates.EUR, data[5].rates.NGN/data[5].rates.EUR],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -447,13 +467,14 @@ const myChart = new Chart(ctx, {
     document.getElementById("mm6").innerHTML = m1;
   
    // console.log("1:"+data[0].rates.NGN);
-		
-    document.getElementById("mr1").innerHTML = data[0].rates.NGN;
-    document.getElementById("mr2").innerHTML = data[1].rates.NGN;
-     document.getElementById("mr3").innerHTML = data[2].rates.NGN;
-    document.getElementById("mr4").innerHTML = data[3].rates.NGN;
-     document.getElementById("mr5").innerHTML = data[4].rates.NGN;
-    document.getElementById("mr6").innerHTML = data[5].rates.NGN;
+  
+   //console.log("2:"+data[0].rates.NGN/data[0].rates.EUR);
+    document.getElementById("mr1").innerHTML = data[0].rates.NGN/data[0].rates.EUR;
+    document.getElementById("mr2").innerHTML = data[1].rates.NGN/data[1].rates.EUR;
+     document.getElementById("mr3").innerHTML = data[2].rates.NGN/data[2].rates.EUR;
+    document.getElementById("mr4").innerHTML = data[3].rates.NGN/data[3].rates.EUR;
+     document.getElementById("mr5").innerHTML = data[4].rates.NGN/data[4].rates.EUR;
+    document.getElementById("mr6").innerHTML = data[5].rates.NGN/data[5].rates.EUR;
     
     
     }).catch(function(error){
@@ -534,7 +555,12 @@ console.log(conbdisplay);
 	document.getElementById("selldollarsrate").innerHTML = format(sellrate);
 	
       //display main rate
-	var n = data[6].result;
+	var n = data[6].rates.EUR;
+
+    
+
+
+
  var con2d = n.toLocaleString();
      document.getElementById("con").innerHTML = con2d;
 		
@@ -586,7 +612,7 @@ const myChart = new Chart(ctx, {
         labels: [m6, m5, m4, m3, m4, m1],
         datasets: [{
             label: '200 dollars to Naira exchange rate in the last 6 months',
-            data: [data[0].rates.NGN, data[1].rates.NGN, data[2].rates.NGN, data[3].rates.NGN, data[4].rates.NGN, data[5].rates.NGN],
+            data: [data[0].rates.NGN/data[0].rates.EUR, data[1].rates.NGN/data[1].rates.EUR, data[2].rates.NGN/data[2].rates.EUR, data[3].rates.NGN/data[3].rates.EUR, data[4].rates.NGN/data[4].rates.EUR, data[5].rates.NGN/data[5].rates.EUR],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -624,13 +650,13 @@ const myChart = new Chart(ctx, {
      document.getElementById("mm5").innerHTML = m2;
     document.getElementById("mm6").innerHTML = m1;
   
-    console.log("2:"+data[0].rates.NGN);
-    document.getElementById("mr1").innerHTML = data[0].rates.NGN;
-    document.getElementById("mr2").innerHTML = data[1].rates.NGN;
-     document.getElementById("mr3").innerHTML = data[2].rates.NGN;
-    document.getElementById("mr4").innerHTML = data[3].rates.NGN;
-     document.getElementById("mr5").innerHTML = data[4].rates.NGN;
-    document.getElementById("mr6").innerHTML = data[5].rates.NGN;
+    console.log("2:"+data[0].rates.NGN/data[0].rates.EUR);
+    document.getElementById("mr1").innerHTML = data[0].rates.NGN/data[0].rates.EUR;
+    document.getElementById("mr2").innerHTML = data[1].rates.NGN/data[1].rates.EUR;
+     document.getElementById("mr3").innerHTML = data[2].rates.NGN/data[2].rates.EUR;
+    document.getElementById("mr4").innerHTML = data[3].rates.NGN/data[3].rates.EUR;
+     document.getElementById("mr5").innerHTML = data[4].rates.NGN/data[4].rates.EUR;
+    document.getElementById("mr6").innerHTML = data[5].rates.NGN/data[5].rates.EUR;
      
       
       
