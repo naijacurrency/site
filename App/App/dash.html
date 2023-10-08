@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>The Real Naija Exchange rates</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="./_vendor/bootstrap-icons/font/bootstrap-icons.css">-->
+    <link rel="stylesheet" href="css/cutom.css">
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23019901-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA--1');
+    </script>
+  </head>
+  <body id="home">
+
+    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Blackmarket Tracker
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarColor01">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="dash.html">Home
+                <span class="visually-hidden">(current)</span>
+              </a>
+            </li>
+            <!--
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            
+           
+          -->
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="privacy.html">Privacy</a>
+            </li>
+
+
+            <li class="nav-item">
+              <a class="nav-link" href="eula.html">Privacy
+               
+              </a>
+             
+            </li>
+           
+        </div>
+      </div>
+    </nav>
+
+<!--header area -->
+
+
+
+  <div style="background-color:#f0f0fc; padding:5px; margin:5px">
+    See the major exchange rates below as at <span id="dat"></span>
+    </div>
+
+  
+
+
+<div class="container text-center">
+
+  <div class="row">
+    <div class="col">
+      <div style="border: 2px solid blue; border-radius: 10%; padding:5px; margin-bottom:5px">
+        <img src="img/cad.svg" style= "max-width:35px"><br>
+        
+        <span>CAD/NGN </span><br>
+        Buying <span id="cad"><img src='img/dollars-to-naira-loading.svg'></span><br>
+        Selling <span id="cadsrate"><img src='img/dollars-to-naira-loading.svg'></span>
+      </div>
+    </div>
+  
+  
+    
+    <div class="col">
+      
+      <div style="border: 2px solid blue; border-radius: 10%; padding:5px; margin-bottom:5px">
+        <img src="img/eur.svg" width="35px"><br>
+        
+        <span>EUR/NGN </span><br>
+        Buying <span id="euro"><img src='img/dollars-to-naira-loading.svg'></span><br>
+        Selling <span id="eursrate"><img src='img/dollars-to-naira-loading.svg'></span>
+      </div>
+    </div>
+    
+  </div>
+
+
+  <div class="row">
+    <div class="col">
+
+      <div style="border: 2px solid blue; border-radius: 10%; padding:5px; margin:1px">
+      <img src="img/usd.svg" style= "max-width:35px"><br>
+      
+      <span>USD/NGN </span><br>
+      Buying <span id="usd"><img src='img/dollars-to-naira-loading.svg'></span><br>
+      Selling <span id="usdsrate"><img src='img/dollars-to-naira-loading.svg'></span>
+
+    </div>
+    </div>
+    <div class="col">
+      <div style="border: 2px solid blue; border-radius: 10%; padding:5px; margin:1px">
+        <img src="img/gbp.svg" width="35px"><br>
+        
+        <span>GBP/NGN </span><br>
+        Buying <span id="gbp"><img src='img/dollars-to-naira-loading.svg'></span><br>
+        Selling <span id="gbpsrate"><img src='img/dollars-to-naira-loading.svg'></span>
+    </div>
+  </div>
+
+<div style="background-color:#f0f0fc; padding:5px; margin:20px; width:90%">
+  <p>These are actual rates based on parrallel market rates. <a href="about.html">Learn more about the rates</a></p>
+</div>
+
+<div style="padding:15px; margin:5px">
+<h2>Convert your Currencies </h2>
+<p></p>
+<form>
+  <div class="form-group">
+  <div class="row">
+
+  <select id="bcurrency" class="form-control-plaintext" style="border:1px solid blue; padding:20px; text-align:center; width: 91%; margin-left:15px">
+    <option>From Currency</option>
+    <option value="CAD">CAD - Canadian Dollars</option>
+    <option value="NGN">NGN - Nigerian Naira</option>
+    <option value="GBP">GBP - British Pounds</option>
+    <option value="USD">USD - United States Dollars</option>
+    <option value="EUR">EUR - Euros</option>
+   
+    </select>
+    
+    </div>
+   <p></p>
+    <div class="row">
+   <select id="ccurrency" class="form-control-plaintext" style="border:1px solid blue; padding:20px; margin-left:15px; text-align:center; width:91% ">
+    <option>To Currency</option>
+    <option value="CAD">CAD - Canadian Dollars</option>
+    <option value="NGN">NGN - Nigerian Naira</option>
+    <option value="GBP">GBP - British Pounds</option>
+    <option value="USD">USD - United States Dollars</option>
+    <option value="EUR">EUR - Euros</option>
+    </select>
+</div>
+<p></p>
+<p>
+
+  <input style="padding:25px; border:1px solid blue; text-align:center; width:96% " type="number" id="r1" placeholder="Enter amount to change">
+</p>
+    <div style="border:1px solid blue; padding:10px; text-align:center; margin-left:5px; width:96%">
+      <span></span>
+      <span style="font-size:20px;vertical-align: middle;" id="result"><img src="img/dollars-to-naira-loading.svg" ></span>
+     <!-- <span style="font-size:20px;vertical-align: middle;" id="conbr"><img src="img/dollars-to-naira-loading.svg" ></span>-->
+      <span style="font-size:20px;vertical-align: middle;"></span>
+      </div>
+
+<p></p>
+      <div style="border:1px solid blue; padding:10px; text-align:center; margin-left:5px; width:96%">
+        <span></span>
+        <span style="font-size:15px;vertical-align: middle;"> Rate : </span><span style="font-size:15px;vertical-align: middle;" id="rate"><img src="img/dollars-to-naira-loading.svg" ></span>
+      <!-- <span style="font-size:20px;vertical-align: middle;" id="conb"><img src="img/dollars-to-naira-loading.svg" ></span>-->
+        <span style="font-size:20px;vertical-align: middle;"></span>
+        </div>
+  
+      
+    <p style="margin:20px">Have questions or want us to add new currencies? Send us an email to hello@naijacurrencyconverter.com.ng</p>
+    <!-- <button class="btn btn-lg btn-primary" style="width:90%; margin:20px" type="button" id="conv">Start Exchanging</button>
+--> 
+      <span style="font-size:20px;color:red; vertical-align: middle;" id="notification"></span>
+
+    </div>
+    </div>
+    </form>
+</div>
+
+</div>
+
+   <script src="js/bootstrap.bundle.min.js"></script>
+   <script src="js/appstart.js"></script>
+  <!--- <script src="../_vendor/prismjs/prism.js" data-manual></script>
+  --><script src="js/custom3.js"></script>
+    </body>
+    </html>
