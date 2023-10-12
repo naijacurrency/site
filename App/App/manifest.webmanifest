@@ -1,0 +1,16 @@
+{
+  "short_name": "BlackMarket",
+  "name": "BlakMarket Tracker App",
+  "description": "The app provides live black market exchange rates for 4 major currencies popular in Nigeria and also a calculator to use these exchanges",
+  "icons": [
+    {
+      "src": "images/icon.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "/App/App/",
+  "background_color": "#FFFFFF",
+  "theme_color": "#FFFFFF",
+  "display": "standalone"
+}
