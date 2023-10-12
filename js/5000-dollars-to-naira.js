@@ -110,11 +110,11 @@ document.addEventListener("DOMContentLoaded", function() {
 //add google adds
 //$.getScript("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2277594145415677");
 
-//var tag = document.createElement("script");
-//tag.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2277594145415677";
-//tag.crossorigin = "anonymous";
-//document.getElementsByTagName("head")[0].appendChild(tag);
-
+var tag = document.createElement("script");
+tag.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5258286762261453";
+tag.crossorigin = "anonymous";
+document.getElementsByTagName("head")[0].appendChild(tag);
+	     
 
 //add google analytics
 var tag = document.createElement("script");
