@@ -25,7 +25,7 @@
     ],
     theme_color: "#FFFFFF",
     background_color: "#FFFFFF",
-    start_url: "/App/App/",
+    start_url: "/",
     display: "standalone",
     orientation: "portrait",
   };
