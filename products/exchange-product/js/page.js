@@ -44,8 +44,8 @@ if(name == "" && email == "" && date ==""){
 
 function sendvmail(){
     AWS.config.update({
-        accessKeyId: 'AKIAJCJ7KVDGB4ZGVEOA',
-        secretAccessKey: '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',
+        accessKeyId: '',
+        secretAccessKey: '',
           region: 'us-east-1',
     });
      
