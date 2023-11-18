@@ -5,7 +5,14 @@ Script to receive confirmation data and send by email
 
 */
 
+document.addEventListener('DOMContentLoaded', function () {
 
+   //add google analytics
+var tag = document.createElement("script");
+tag.src = "https://www.googletagmanager.com/gtag/js?id=G-XFZL8723RQ";
+document.getElementsByTagName("head")[0].appendChild(tag); 
+
+});
 
 //show or hide bank details
 
@@ -33,6 +40,7 @@ var name = document.getElementById("name").value;
 var bank = document.getElementById("bank").value;
 var date = document.getElementById("date").value;
 var email = document.getElementById("email").value;
+var phone = document.getElementById("phone").value;
 
 if(name == "" && email == "" && date ==""){
     //no sending
@@ -41,6 +49,33 @@ if(name == "" && email == "" && date ==""){
 
 
 //send email
+var data = {
+    name: name,
+    bank: bank,
+    date: date,
+    email: email,
+    phone: phone,
+    
+}
+//console.log(data);
+
+$.ajax({
+    method: 'POST',
+    data: data,
+    //url: 'http://localhost/test_php/send_email.php',
+    url: 'https://axamen.atwebpages.com/test_php/send_email.php',
+    success:function(data){
+     //  console.log(data);
+    }
+   
+}).fail(function(){
+    console.log("ajax failed");
+});
+
+
+
+
+/*
 
 function sendvmail(){
     AWS.config.update({
@@ -102,8 +137,8 @@ function sendvmail(){
          
          
     }
-
-    sendvmail();
+  */
+   // sendvmail();
 }
 
 });
