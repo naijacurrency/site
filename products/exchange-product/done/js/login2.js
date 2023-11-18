@@ -143,7 +143,7 @@ $("#lform")[0].reset();
             localStorage.setItem("lpasswd", "");
              
             //redirect to training page
-        document.location.href="training_home.html";
+        document.location.href="training.html";
 
         } else {
             $.busyLoadFull("hide");
