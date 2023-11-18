@@ -17,7 +17,7 @@ $(document).ready(function(){
      firebase.initializeApp(firebaseConfig);
      const auth = firebase.auth(); 
      
-     console.log("firebase loaded");
+     //console.log("firebase loaded");
 
      
 
@@ -37,6 +37,11 @@ $(document).ready(function(){
      
            // Initialize Cloud Firestore and get a reference to the service
          const db = firebase.firestore();
+
+         //add google analytics
+        var tag = document.createElement("script");
+        tag.src = "https://www.googletagmanager.com/gtag/js?id=G-XFZL8723RQ";
+        document.getElementsByTagName("head")[0].appendChild(tag);
      
          } else {
      
@@ -143,7 +148,7 @@ $("#lform")[0].reset();
             localStorage.setItem("lpasswd", "");
              
             //redirect to training page
-        document.location.href="training.html";
+        document.location.href="training_home.html";
 
         } else {
             $.busyLoadFull("hide");
