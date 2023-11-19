@@ -42,6 +42,10 @@ $(document).ready(function(){
         var tag = document.createElement("script");
         tag.src = "https://www.googletagmanager.com/gtag/js?id=G-XFZL8723RQ";
         document.getElementsByTagName("head")[0].appendChild(tag);
+
+        var tag = document.createElement("script");
+tag.src = "js/gascript.js";
+document.getElementsByTagName("head")[0].appendChild(tag);
      
          } else {
      
