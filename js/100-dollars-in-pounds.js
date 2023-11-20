@@ -148,7 +148,7 @@ var sellrate=blrate+710;
 var conbdispla=100/blrate;
 var conbdisplay=conbdispla.toLocaleString();
 
-document.getElementById("selldollarsrate").innerHTML=sellrate;
+//document.getElementById("selldollarsrate").innerHTML=sellrate;
 
 console.log(data);
 
@@ -193,7 +193,7 @@ var gate=gbrate+(0.0*gbrate);
 console.log(gate);
 console.log(blrate);
 var gbp2GBP=gate*blrate;var grate=gbp2GBP.toFixed(2);
-document.getElementById("pou").innerHTML=grate;
+//document.getElementById("pou").innerHTML=grate;
 const ctx=document.getElementById('myChart').getContext('2d');
 
 const myChart=new Chart(ctx,{type:'line',data:{
