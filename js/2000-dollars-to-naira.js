@@ -389,7 +389,7 @@ var gate = gbrate+(0.0*gbrate);
 var gbp2ngn = gate * blrate;
 		
 var grate = gbp2ngn.toFixed(2);		
- document.getElementById("pou").innerHTML = grate;		
+// document.getElementById("pou").innerHTML = grate;		
 		
   // console.log(data[6].result);
  //  console.log(data[6].date);
