@@ -314,7 +314,7 @@ var conbdispla = blrate * amount_to_change;
 var conbdisplay = conbdispla.toLocaleString();
 //console.log(conbdisplay);
     
-document.getElementById("selldollarsrate").innerHTML = sellrate;
+//document.getElementById("selldollarsrate").innerHTML = sellrate;
 //console.log(data[6].rates.NGN);
  var n = data[6].rates.NGN*amount_to_change;
 // console.log(n);
