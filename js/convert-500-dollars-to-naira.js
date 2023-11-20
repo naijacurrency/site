@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 //add google analytics
 var tag = document.createElement("script");
-tag.src = "https://www.googletagmanager.com/gtag/js?id=GTM-KK65QMMQ";
+tag.src = "https://www.googletagmanager.com/gtag/js?id=G-XFZL8723RQ";
 document.getElementsByTagName("head")[0].appendChild(tag);
 
 var tag = document.createElement("script");
