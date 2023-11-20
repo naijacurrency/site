@@ -1,11 +1,11 @@
 
 
+//
+//var tag = document.createElement("script");
+//tag.src = "js/gtag.js";
+//document.getElementsByTagName("body")[0].appendChild(tag);
 
-var tag = document.createElement("script");
-tag.src = "js/gtag.js";
-document.getElementsByTagName("body")[0].appendChild(tag);
-
-var gtaging = '<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KK65QMMQ"height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>';
+//var gtaging = '<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KK65QMMQ"height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>';
 
 
 var tmenu = '<a class="uk-navbar-brand" href="index.html"><span class="customspan">NaijaCurrencyConverter</span></a><div class="uk-container uk-container-center"><ul class="uk-navbar-nav uk-hidden-small"><li><a href="index.html">Welcome</a></li><li><a href="aboutus.html">About Us</a></li><li><a href="blog.html">Blog</a></li><li><a href="#qc">Quick Calculators</a></li><li><a href="contactus.html">Contact us</a></li></ul><a href="#tm-offcanvas" class="uk-visible-small" data-uk-offcanvas=""><span><i class="fas fa-bars fa-lg" style="margin-top:12px"></i></span></a></div>';

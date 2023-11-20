@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 //add google analytics
 var tag = document.createElement("script");
-tag.src = "https://www.googletagmanager.com/gtag/js?id=G-XFZL8723RQ";
+tag.src = "https://www.googletagmanager.com/gtag/js?id=GTM-KK65QMMQ";
 document.getElementsByTagName("head")[0].appendChild(tag);
 
 var tag = document.createElement("script");
@@ -389,7 +389,7 @@ var gate = gbrate+(0.0*gbrate);
 var gbp2ngn = gate * blrate;
 		
 var grate = gbp2ngn.toFixed(2);		
-// document.getElementById("pou").innerHTML = grate;		
+ //document.getElementById("pou").innerHTML = grate;		
 		
   // console.log(data[6].result);
  //  console.log(data[6].date);
