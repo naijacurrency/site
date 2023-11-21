@@ -9,10 +9,12 @@
     <link rel="stylesheet" href="css/main.css" media="screen">
 <link rel="stylesheet" href="css/index.css" media="screen">
 <link rel="stylesheet" href="css/home.css" media="screen">
+<link rel="stylesheet" href="css/modal.css" media="screen">
     <script class="u-script" type="text/javascript" src="js/jquery.min.js" defer=""></script>
     <script src="https://sdk.amazonaws.com/js/aws-sdk-2.831.0.min.js"></script>
     <script class="u-script" type="text/javascript" src="js/index.min.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="js/page.js" defer="" ></script>
+    <script type="text/javascript" src="js/modal_open.js" defer=""></script>
     <link rel="shortcut icon" type="img/x-icon" href="https://www.naijacurrencyconverter.com.ng/img/favicon.ico">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Ubuntu:300,300i,400,400i,500,500i,700,700i">
@@ -492,9 +494,14 @@ are seeing this and the spots will fill up soon
             </span>
             <br>&nbsp;<br>
             
+            
                 <div style="max-width:650px; border:1px solid green; margin-right:auto; margin-left: auto; padding:5px;"> 
                 <span id="showorder" style="font-size: 2.25rem; font-weight: 700;">How to Order&nbsp;</span>
                 <br>
+                <div id="discountapplied" style="display:none; background-color: red; color:white; font-size: 24;">
+                  <p>  Your discount has been applied! <br>
+                    Please pay the sum of N<span id="aprice"></span></p>
+                  </div>
                 <br>
                 <span style="font-size: 1.5rem;">
               <span style="font-weight: 700; text-decoration: underline !important;">Step 1: </span><br>Pay by bank
@@ -513,8 +520,9 @@ are seeing this and the spots will fill up soon
                 <p><input type="text" id="name" placeholder="Your Name" required style="width: 350px; padding:15px; border-color: brown; font-size: 18px;"></p>
                 <p><input type="text" id="bank" placeholder="Bank you paid from" style="width: 350px; padding:15px; border-color: brown; font-size: 18px;"></p>
                <p>Date of payment<br><input type="date" id="date" placeholder="Date of Payment" required style="width: 350px; padding:15px; border-color: brown; font-size: 18px;"></p>
-                <p><input type="text" id="email" placeholder="Your email for your login details" required style="width: 350px; padding:15px; border-color: brown; font-size: 18px;"></p>
-                
+                <p><input type="email" id="email" placeholder="Your email for your login details" required style="width: 350px; padding:15px; border-color: brown; font-size: 18px;"></p>
+                <p><input type="number" id="phone" placeholder="Your phone number" required style="width: 350px; padding:15px; border-color: brown; font-size: 18px;"></p>
+
                 <button type="submit" id="formsubmit" class="u-border-none u-btn u-btn-round u-button-style u-custom-color-1 u-hover-palette-1-light-1 u-radius-50 u-btn-2" style="margin-right: auto; margin-left: auto;">Send Confirmation </button><br>
                 <span style="font-style: italic;">Please allow 15 mins for payment confirmaton.</span></form>
               
@@ -523,7 +531,7 @@ are seeing this and the spots will fill up soon
 
               
                 <span style="font-size: 1.5rem;"><b><u>Step 3:</u></b></span> <br>
-                <p style="font-size:20px">After you receive your login details, <a href="https://www.naijacurrencyconverter.com.ng/products/exchange-product/done/login.html">click here to login and access the guide</a>.</p>
+                <p style="font-size:20px">After you receive your login details,<a href="https://www.naijacurrencyconverter.com.ng/products/exchange-product/done/login.html"> click here to login and access the guide.</a></p>
             </span>&nbsp;&nbsp;
          </div> 
         </span>
@@ -615,8 +623,11 @@ the spots close out</h2>
         
       </div>
     </section>
-    
-   
+
+    <!--Modal-->
+    <div id="mModal" class="modal"><div class="modal-content">
+      <iframe width="540" height="350" src="https://b5030a47.sibforms.com/serve/MUIFAIk0PVByfVa4O11wGDCBocTQSIBjiSACAtG_8n4QW3Dn9AO-z80iocHNRXe_5JXkpJhFH1t-XK1huF1B2Q04xNeJ4Kl3_kM6jEhj6oY2OM2ijF6dmPXry0F9VKqEChHcupta8d6QCsHL6fSWQHNMkOFNwZbyKfiQLXTj4Pk19qeot3XnrYSYWql7JODd_3Rrm6pRhCpI5H-m" frameborder="0" scrolling="" allowfullscreen style="display: block;margin-left: auto;margin-right: auto; height:480px;max-width: 100%;"></iframe></div></div>
+
     <section class="u-backlink u-clearfix u-grey-80">
      
       <a class="u-link" href="" target="_blank">
