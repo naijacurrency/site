@@ -16,6 +16,8 @@ var tag = document.createElement("script");
 tag.src = "js/gascript.js";
 document.getElementsByTagName("head")[0].appendChild(tag);
 
+
+
 });
 
 //show or hide bank details
@@ -149,5 +151,57 @@ function sendvmail(){
 
 
 
+/* get query string and apply discount */
+
+//var querystring = window.location.querystring;
+//var discount_set = querystring["disc"];
+
+//var qs = new QueryString();
+
+// use_id is now available in the use_id variable
+//var discount_set = qs.get("disc");
+
+var urlParam = function(name, w){
+    w = w || window;
+    var rx = new RegExp('[\&|\?]'+name+'=([^\&\#]+)'),
+        val = w.location.search.match(rx);
+    return !val ? '':val[1];
+}
+
+var discount_set = urlParam('disc');
+console.log(discount_set);
 
 
+
+if(discount_set == "y"){
+
+    //update ls
+    localStorage.setItem("disco", "y");
+    //reduce the amount by 15%
+    var namt = 45500 - (45500*.15);
+    //diplay discount div
+    document.getElementById("discountapplied").style.display = "block";
+
+    
+
+    if(document.getElementById("aprice")){
+    //write new amount into page
+    document.getElementById("aprice").innerHTML=namt;
+
+  
+    //scroll to order area
+    setTimeout(function(){ 
+document.getElementById("showorder").scrollIntoView();
+}, 1000);
+    
+    //disable popup
+    var moda = document.getElementById("mModal");
+    moda.style.display = "none";
+
+    //delete discount from ls
+    localStorage.setItem("disco", "");
+
+    } else {
+        console.log("div not found");
+    }
+}
