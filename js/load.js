@@ -68,7 +68,7 @@ tag.async="async";
 tag.src = "js/vig-banner.js";
  document.getElementsByTagName("body")[0].appendChild(tag); 
 	
-	},4500);
+	},5000);
 
 
 	/*
