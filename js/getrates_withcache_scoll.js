@@ -101,7 +101,7 @@ if(localStorage.getItem("scrollc")){
 */
 //on load
 document.addEventListener("DOMContentLoaded", function() {
-    
+    console.log("waiting");
  setTimeout(function(){// console.log("After 8 seconds!"); 
     
     
@@ -143,6 +143,7 @@ tag.data-zone="50141";
 tag.data-cfasync="false";
 	
 document.getElementsByTagName("body")[0].appendChild(tag);
+	 console.log("ad should have loaded");
 
 //check if all data exists in LS
 
