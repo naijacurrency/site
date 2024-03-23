@@ -53,14 +53,7 @@ document.getElementsByTagName("body")[0].appendChild(tag);
 	document.body.appendChild(noscript)
 
 
- //load ads
-//	<script src="https://alwingulla.com/88/tag.min.js" data-zone="50141" async data-cfasync="false"></script>
-	var adtag = document.createElement("script");
-adtag.src = "https://alwingulla.com/88/tag.min.js";
-adtag.data-zone="50141";
-adtag.data-cfasync="false";
-	
-document.getElementsByTagName("body")[0].appendChild(adtag);
+
 
 });
 
