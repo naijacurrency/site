@@ -58,8 +58,10 @@ var tag = document.createElement("script");
 tag.async="async";
 tag.src = "//thubanoa.com/1?z=7205874";
 //tag.data-cfasync="false";
-document.getElementsByTagName("body")[0].appendChild(tag);
-	 },4500);
+if(tag.src){
+document.getElementsByTagName("body")[0].appendChild(tag); 
+	 } else {
+	console.log("ad url blocked")},4500);
 
 	/*
  <script async="async" data-cfasync="false" src="//thubanoa.com/1?z=7205874"></script>
