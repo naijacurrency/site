@@ -55,12 +55,12 @@ document.getElementsByTagName("body")[0].appendChild(tag);
 	 setTimeout(function(){ 
 		 console.log("."); 
 		 //ad inter ad
-var tag = document.createElement("script");
-tag.async="async";
-tag.src = "//thubanoa.com/1?z=7205874";
+//var tag = document.createElement("script");
+////tag.async="async";
+//tag.src = "//thubanoa.com/1?z=7205874";
 //tag.data-cfasync="false";
 
-document.getElementsByTagName("body")[0].appendChild(tag); 
+//document.getElementsByTagName("body")[0].appendChild(tag); 
 
 		 //add banner ad
 var tag = document.createElement("script");
