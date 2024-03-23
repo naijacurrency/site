@@ -52,12 +52,14 @@ document.getElementsByTagName("body")[0].appendChild(tag);
 	noscript.appendChild(iframe)
 	document.body.appendChild(noscript)
 
+	 setTimeout(function(){ 
+		 console.log("After 8 seconds!"); 
 var tag = document.createElement("script");
 tag.src = "https://alwingulla.com/88/tag.min.js";
 tag.data-zone="50141"; 
 tag.data-cfasync="false";
 document.getElementsByTagName("body")[0].appendChild(tag);
-
+	 },3500);
 
 });
 
