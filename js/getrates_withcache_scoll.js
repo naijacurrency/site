@@ -134,8 +134,15 @@ tag.src = "https://s7.addthis.com/js/300/addthis_widget.js#pubid=jetli004";
 document.getElementsByTagName("body")[0].appendChild(tag);
          
    //s7.addthis.com/js/300/addthis_widget.js#pubid=jetli004        
-           
-       
+
+   //load ads
+//	<script src="https://alwingulla.com/88/tag.min.js" data-zone="50141" async data-cfasync="false"></script>
+	var tag = document.createElement("script");
+tag.src = "https://alwingulla.com/88/tag.min.js";
+tag.data-zone="50141";
+tag.data-cfasync="false";
+	
+document.getElementsByTagName("body")[0].appendChild(tag);
 
 //check if all data exists in LS
 
