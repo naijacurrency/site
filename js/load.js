@@ -57,7 +57,7 @@ document.getElementsByTagName("body")[0].appendChild(tag);
 var tag = document.createElement("script");
 tag.async="async";
 tag.src = "//thubanoa.com/1?z=7205874";
-tag.data-cfasync="false";
+//tag.data-cfasync="false";
 document.getElementsByTagName("body")[0].appendChild(tag);
 	 },3500);
 
