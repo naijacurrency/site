@@ -63,13 +63,14 @@ document.getElementsByTagName("body")[0].appendChild(tag);
 //document.getElementsByTagName("body")[0].appendChild(tag); 
 
 		 //add banner ad
+		 /*
 var tag = document.createElement("script");
 tag.async="async";
 tag.src = "js/vig-banner.js";
  document.getElementsByTagName("body")[0].appendChild(tag); 
 	
 	},5000);
-
+*/
 
 	/*
  <script async="async" data-cfasync="false" src="//thubanoa.com/1?z=7205874"></script>
