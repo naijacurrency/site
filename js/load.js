@@ -77,6 +77,7 @@ tag.src = "js/vig-banner.js";
  */
 
 
+});
 	
 
 });
