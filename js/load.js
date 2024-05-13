@@ -16,7 +16,6 @@ var calcu = "";
 
 var offers = '<table style="width:90%;max-width:600px"><tr><tr><td><figure class="image"><a href="https://s3.amazonaws.com/cdn.naijacurrencyconverter.com.ng/bmtracker-release/app-release.apk"><img style="aspect-ratio:810/450;" src="img/Track-BlackMarket.webp" loading="lazy" width="100%" height=100% alt="black-market-exchange-rate-tracker"></a></figure></td></tr><tr><td style="padding:10px"><span style="color:blue; font-weight:bold;">Open a Multicurrency Account - USD, GBP, EUR for FREE with a Debit card </span>.<br> Send money cheaper and easier than old-school banks, Use your card in more than 175 countries and withdraw money from 2.3 million ATMs. Tap or swipe anywhere — and use Google Pay and Apple Pay in supported countries. <br><a href="https://bit.ly/dollarstransfernow">See how to open an account</a></td> </tr></table>';
 
-//var offers = '<tablestyle="max-width:600px;"><tbody><tr><td><figureclass="image"><ahref="https://s3.amazonaws.com/cdn.naijacurrencyconverter.com.ng/bmtracker-release/app-release.apk"target="_blank"rel="noopenernoreferrer"><imgstyle="aspect-ratio:810/450;"src="img/Track-BlackMarket.webp"alt="black-market-exchange-rate-tracker"width="100%"height="100%"loading="lazy"></a></figure></td></tr><tr><tdstyle="padding:10px;"><spanstyle="color:blue;"><strong>Open a Multicurrency Account - USD, GBP, EUR for FREE with a Debit card </strong></span>.<br>Send money cheaper and easier than old-school banks, Use your card in more than 175 countries and withdraw money from 2.3 million ATMs. Tap or swipe anywhere — and use Google Pay and Apple Pay in supported countries.&nbsp;<br><atarget="_blank"rel="noopenernoreferrer"href="https://bit.ly/dollarstransfernow">Seehowtoopenanaccount</a></td></tr></tbody></table>';
 
 var bmenu = '<ul class="uk-nav uk-nav-offcanvas" data-uk-nav="{ multiple: true }"><li class="uk-parent" aria-expanded="false"><a href="#">Menu</a></li><li class="uk-nav-header"><a href="index.html">Home</a></li><li class="uk-nav-header"><a href="aboutus.html">About Us</li><li class="uk-nav-header"><a href="#qc">Quick Calculators</a></li><li class="uk-nav-header"><a href="contactus.html">Contact us</li><li class="uk-nav-header"><a href="disclaimer.html">Data Disclaimer</a></li><li class="uk-nav-header"><a href="privacy-policy.html">Privacy Policy</a></li></ul>';
 
@@ -53,29 +52,9 @@ document.addEventListener('DOMContentLoaded', function () {
 	noscript.appendChild(iframe)
 	document.body.appendChild(noscript)
 
-	 setTimeout(function(){ 
-		 console.log("."); 
-		 //ad inter ad
-//var tag = document.createElement("script");
-////tag.async="async";
-//tag.src = "//thubanoa.com/1?z=7205874";
-//tag.data-cfasync="false";
-
-//document.getElementsByTagName("body")[0].appendChild(tag); 
-
-		 //add banner ad
-		 /*
-var tag = document.createElement("script");
-tag.async="async";
-tag.src = "js/vig-banner.js";
- document.getElementsByTagName("body")[0].appendChild(tag); 
 	
-	},5000);
-*/
 
-	/*
- <script async="async" data-cfasync="false" src="//thubanoa.com/1?z=7205874"></script>
- */
+
 
 
 });
