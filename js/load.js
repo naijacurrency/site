@@ -38,9 +38,9 @@ document.addEventListener('DOMContentLoaded', function () {
 	//load bottom menu
 	document.getElementById("nf").innerHTML = bottom_menu;
 
-	var tag = document.createElement("script");
-tag.src = "js/modal_load.js";
-document.getElementsByTagName("body")[0].appendChild(tag);
+//	var tag = document.createElement("script");
+//tag.src = "js/modal_load.js";
+//document.getElementsByTagName("body")[0].appendChild(tag);
 
 	
 
