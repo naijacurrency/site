@@ -4,6 +4,7 @@ var tmenu = '<a class="uk-navbar-brand" href="index.html">
 <ul class="uk-navbar-nav uk-hidden-small">
 <li><a href="index.html">Welcome</a></li>
 <li><a href="aboutus.html">About Us</a></li>
+<li><a href="blog.html">Blog</a></li>
 <li><a href="#qc">Quick Calculators</a></li>
 <li><a href="contactus.html">Contact us</a></li>
 </ul>
@@ -37,9 +38,10 @@ var bmenu = '<ul class="uk-nav uk-nav-offcanvas" data-uk-nav="{ multiple: true }
 </li>
 <li class="uk-nav-header"><a href="index.html">Home</a></li>
  
-<li class="uk-nav-header"><a href="aboutus.html">About Us</li>
+<li class="uk-nav-header"><a href="aboutus.html">About Us</a></li>
+<li class="uk-nav-header"><a href="blog.html">Blog</a></li>
 <li class="uk-nav-header"><a href="#qc">Quick Calculators</a></li>
-<li class="uk-nav-header"><a href="contactus.html">Contact us</li>
+<li class="uk-nav-header"><a href="contactus.html">Contact us</a></li>
 <li class="uk-nav-header"><a href="disclaimer.html">Data Disclaimer</a></li>
 <li class="uk-nav-header"><a href="privacy-policy.html">Privacy Policy</a></li>
 
