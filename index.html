@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 var tag = document.createElement("script");
    tag.src = "//thubanoa.com/1?z=8091433";
-tag.data-cfasync="false";
+	     tag.setAttribute('data-cfasync', 'false');
     document.getElementsByTagName("body")[0].appendChild(tag);
 
   }, 3500);
