@@ -168,38 +168,14 @@ background-color: #ffffff;
   
     return videoDiv;
   }
-  
-  // Function to create ad space with a 2-second delay before loading ads
-  function createAdSpace() {
-    const adDiv = document.createElement('div');
-    adDiv.classList.add('ad-space');
-    adDiv.textContent = 'Loading Ad...'; // Initial placeholder text
-  
-    // Introduce a 2-second delay before loading the ad scripts
-    setTimeout(() => {
-      // Insert the LeadsLeap ad script
-      const adScript1 = document.createElement('script');
-      adScript1.setAttribute('data-cfasync', 'false');
-      adScript1.innerHTML = `
-        ll_r="jetli005"; ll_bc="#ffffff"; ll_hc="#e22121"; ll_tc="#555a69"; 
-        ll_cc="#8d9aa6"; ll_dc="#8891a8"; ll_w=""; ll_nf="0"; ll_nc="1"; 
-        ll_nh="0"; ll_nm="0"; ll_np="1"; ll_pa="0"; ll_nt="0"; ll_wt="1"; 
-        ll_fw="1"; ll_n="6"; ll_cl=""; ll_s="w";
-      `;
-  
-      const adScript2 = document.createElement('script');
-      adScript2.setAttribute('data-cfasync', 'false');
-      adScript2.src = "https://w.leadsleap.com/js.js";
-  
-      // Clear the placeholder text and append the scripts
-      adDiv.textContent = ''; 
-      adDiv.appendChild(adScript1);
-      adDiv.appendChild(adScript2);
-    }, 2000); // 2-second delay
-  
-    return adDiv;
-  }
-  
+
+function createAdSpace() {
+  const adDiv = document.createElement('div');
+  adDiv.classList.add('ad-space');
+  adDiv.textContent = '<figureclass="table"style="width:35.57%;"><tableclass="ck-table-resized"style="background-color:hsl(0,0%,90%);border-style:none;"><colgroup><colstyle="width:36.33%;"><colstyle="width:63.67%;"></colgroup><tbody><tr><td><figureclass="imageimage_resized"style="width:75%;"data-ckbox-resource-id="FC09izApZeGw"><picture><sourcesrcset="https://ckbox.cloud/c60c3de7711cc072bc06/assets/FC09izApZeGw/images/80.webp80w,https://ckbox.cloud/c60c3de7711cc072bc06/assets/FC09izApZeGw/images/160.webp160w,https://ckbox.cloud/c60c3de7711cc072bc06/assets/FC09izApZeGw/images/240.webp240w,https://ckbox.cloud/c60c3de7711cc072bc06/assets/FC09izApZeGw/images/320.webp320w,https://ckbox.cloud/c60c3de7711cc072bc06/assets/FC09izApZeGw/images/400.webp400w,https://ckbox.cloud/c60c3de7711cc072bc06/assets/FC09izApZeGw/images/480.webp480w,https://ckbox.cloud/c60c3de7711cc072bc06/assets/FC09izApZeGw/images/520.webp520w"type="image/webp"sizes="(max-width:520px)100vw,520px"><imgsrc="https://ckbox.cloud/c60c3de7711cc072bc06/assets/FC09izApZeGw/images/520.jpeg"width="520"height="470"></picture></figure></td><td><pstyle="text-align:center;"><spanstyle="color:#b71c1c;font-size:22px;"><strong>Howto</strong></span><spanstyle="background-color:#ffe082;color:#b71c1c;font-size:22px;"><strong>Maximize</strong></span><spanstyle="color:#b71c1c;font-size:22px;"><strong>YourMoney&nbsp;</strong></span></p><pstyle="text-align:center;"><spanstyle="color:#b71c1c;font-size:22px;"><strong><u>inReal-Time</u>!</strong></span></p></td></tr></tbody></table></figure><pstyle="text-align:center;">&nbsp;</p>';
+  return adDiv;
+}
+
   // Function to display videos and ads
   async function displayVideos(pageToken = '') {
     const data = await fetchVideos(pageToken);
