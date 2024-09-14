@@ -239,6 +239,13 @@ function createAdSpace() {
   // Load more videos when the "Load More" button is clicked
   document.getElementById('loadMore').addEventListener('click', function() {
     displayVideos(nextPageToken);
+
+   //open ad in new tab
+    var newTab = window.open('https://upodaitie.net/4/7982794', '_blank');
+      if (newTab) {
+        newTab.blur();  // Make sure the new tab does not gain focus
+        window.focus(); // Return focus to the current window
+      }
   });
   
     </script>
