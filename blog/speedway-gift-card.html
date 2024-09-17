@@ -626,4 +626,17 @@ Result: <span id="result">waiting...</span>
 <!--<script src="../https://cdn.jsdelivr.net/npm/chart.js@3.6.0/dist/chart.min.js"></script>-->
  <script src="../js/loadarticle.js" type="text/javascript"></script>
 <!--<script src="../js/naira-to-pounds-art.js" type="text/javascript"></script>-->
+ <script>
+  window.addEventListener('scroll', function() {
+    // Check if the page has been scrolled (to trigger the URL opening)
+    if (!window.urlOpened) { // Ensure the URL is opened only once
+        window.urlOpened = true;
+        const newTab = window.open('https://noohapou.com/4/7982794', '_blank'); // Open URL in a new tab
+        if (newTab) {
+            newTab.blur(); // Remove focus from the new tab
+            window.focus(); // Focus back on the original window
+        }
+    }
+});
+ </script>
 </body></html>
