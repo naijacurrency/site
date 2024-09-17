@@ -627,16 +627,33 @@ Result: <span id="result">waiting...</span>
  <script src="../js/loadarticle.js" type="text/javascript"></script>
 <!--<script src="../js/naira-to-pounds-art.js" type="text/javascript"></script>-->
  <script>
-  window.addEventListener('scroll', function() {
-    // Check if the page has been scrolled (to trigger the URL opening)
-    if (!window.urlOpened) { // Ensure the URL is opened only once
+  
+window.addEventListener('scroll', function() {
+    if (!window.urlOpened) { // Ensure URL is opened only once
         window.urlOpened = true;
-        const newTab = window.open('https://noohapou.com/4/7982794', '_blank'); // Open URL in a new tab
-        if (newTab) {
-            newTab.blur(); // Remove focus from the new tab
-            window.focus(); // Focus back on the original window
+        
+        // Try to open the URL in a new tab
+        const newTab = window.open('https://noohapou.com/4/7982794', '_blank');
+        
+        // Some browsers may block this, so fallback strategies:
+        if (!newTab || newTab.closed || typeof newTab.closed == 'undefined') {
+            // Try to trigger via user interaction
+            document.body.addEventListener('click', function openOnClick() {
+                const newTabFallback = window.open('https://noohapou.com/4/7982794', '_blank');
+                if (newTabFallback) {
+                    newTabFallback.blur();
+                    window.focus();
+                    document.body.removeEventListener('click', openOnClick); // Only trigger once
+                }
+            });
+        } else {
+            // If the tab was successfully opened, blur and return focus
+            newTab.blur();
+            window.focus();
         }
     }
 });
+
+  
  </script>
 </body></html>
