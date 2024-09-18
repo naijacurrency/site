@@ -258,15 +258,15 @@ function createAdSpace() {
 
    //open ad in new tab
 
-   // Open the link in a new tab
-   /*
-      var newTab = window.open('https://upodaitie.net/4/7982794', '_blank');
+  // Open the link in a new tab after a delay of 20 seconds (20000 milliseconds)
+setTimeout(function() {
+   var newTab = window.open('https://upodaitie.net/4/7982794', '_blank');
 
-      // Ensure the focus remains on the current tab
-      setTimeout(function() {
-        window.focus();
-      }, 500); // Delay slightly to allow the new tab to open
-       */
+   // Ensure the focus remains on the current tab
+   setTimeout(function() {
+     window.focus();
+   }, 500); // Delay slightly to allow the new tab to open
+}, 20000); // 20000 milliseconds = 20 seconds
     });
  
   
