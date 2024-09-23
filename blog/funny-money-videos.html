@@ -136,8 +136,10 @@ background-color: #ffffff;
   
  <button id="loadMoreNext" style="display:none">Load Videos >> </button>
    <div id="loadMore">
-    <span style="font-weight:bold; font-size:14px; text-align:center;">CLICK PLAY AND USE A HEADPHONE IF YOU ARE NOT ALONE</span>
-    <img src="https://www.naijacurrencyconverter.com.ng/img/cover-funny-money-video.webp" width="100%" style="max-width:650px" >
+  <center> <span style="font-weight:bold; font-size:14px;">
+     CLICK TO PLAY</span> </center> 
+    <img src="https://www.naijacurrencyconverter.com.ng/img/cover-funny-money-video.webp" 
+     width="100%" style="max-width:650px">
    </div>
   
   
@@ -265,9 +267,11 @@ function createAdSpace() {
   document.getElementById('loadMore').addEventListener('click', function() {
     displayVideos(nextPageToken);
    
-
-    document.getElementById('loadMoreNext').addEventListener('click', function() {
+   if(document.getElementById('loadMoreNext'){
+     document.getElementById('loadMoreNext').addEventListener('click', function() {
     displayVideos(nextPageToken);
+   });
+   }
 
    //open ad in new tab
 
